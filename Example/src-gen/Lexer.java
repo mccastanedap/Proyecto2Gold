@@ -65,19 +65,19 @@ public final class Lexer {
       $line=34;
       Object preKW=$fix(GCollections.asSet("p","pl","plu","plus","t","ti","tim","time","times"));
       $line=35;
-      Object Q=$fix(GCollections.asSet("I","Id","p","pl","plu","plus","t","ti","tim","time","times","Num","Err"));
-      $line=37;
-      Object \u03A3=$fix($opUnionY($opUnionY($opIntvlY('0','9'),$opIntvlY('a','z')),GCollections.asSet('(',')',' ')));
-      $line=38;
-      Object Out=$fix(GCollections.asSet('(',')','+','*','v','n'));
-      $line=39;
-      Object q_0=$fix("I");
+      Object Q=$fix(GCollections.asSet("Init","R","RO","ROB","ROBO","ROBOT","ROBOT_","ROBOT_R","V","VA","VAR","VARS","B","BE","BEG","BEGI","BEGIN","E","EN","END","a","as","ass","assi","assig","assign","t","to","m","mo","mov","move","t","tu","tur","turn","f","fa","fac","face","p","pu","put","o","of","p","pi","pic","pick","T","To","ToT","ToTh","ToThe","i","in","inD","inDi","inDir","r","ri","rig","rigt","rigth","l","le","lef","left","b","ba","bac","back","f","fr","fro","fron","front"));
       $line=40;
-      Object F=$fix(GCollections.asSet("I"));
+      Object \u03A3=$fix($opUnionY($opUnionY($opIntvlY('0','9'),$opIntvlY('a','z')),GCollections.asSet('(',')',' ')));
       $line=41;
+      Object Out=$fix(GCollections.asSet('(',')','+','*','v','n'));
+      $line=42;
+      Object q_0=$fix("I");
+      $line=43;
+      Object F=$fix(GCollections.asSet("I"));
+      $line=44;
       $result=$invokeConstructor(GDeterministicTransducer.class,new Object[]{Q,\u03A3,Out,q_0,F,new GMethod(Lexer.class,"\u03B4"),new GMethod(Lexer.class,"g"),new GMethod(Lexer.class,"h")});
       if (true) break $try;
-      $line=42;
+      $line=45;
       $rethrow(new RuntimeException("The function \"createTransducer()\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -89,107 +89,128 @@ public final class Lexer {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=45;
+      $line=48;
       if ($bool($opEqualY(q,"Err"))) {
-        $line=45;
+        $line=48;
         $result="Err";
         if (true) break $try;
       }
       else {
-        $line=46;
-        if ($opMembrY(\u03C3,GCollections.asSet('(',')',' '))) {
-          $line=46;
-          $result="I";
+        $line=49;
+        if ($opMembrY(\u03C3,GCollections.asSet('(',')',' ','\n',',','\t',';',':'))) {
+          $line=49;
+          $result="Init";
           if (true) break $try;
         }
         else {
-          $line=47;
-          if (($opEqualY(q,"I")&&$opEqualY(\u03C3,'p'))) {
-            $line=47;
-            $result="p";
+          $line=50;
+          if ($opMembrY(\u03C3,GCollections.asSet($opIntvlY('0','9')))) {
+            $line=50;
+            $result="Init";
             if (true) break $try;
           }
           else {
-            $line=48;
-            if (($opEqualY(q,"I")&&$opEqualY(\u03C3,'t'))) {
-              $line=48;
-              $result="t";
+            $line=51;
+            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'R'))) {
+              $line=51;
+              $result="R";
               if (true) break $try;
             }
             else {
-              $line=49;
-              if (($opEqualY(q,"I")&&$opMembrY(\u03C3,$opIntvlY('0','9')))) {
-                $line=49;
-                $result="Num";
+              $line=52;
+              if (($opEqualY(q,"R")&&$opEqualY(\u03C3,'O'))) {
+                $line=52;
+                $result="RO";
                 if (true) break $try;
               }
               else {
-                $line=50;
-                if (($opEqualY(q,"Num")&&$opMembrY(\u03C3,$opIntvlY('0','9')))) {
-                  $line=50;
-                  $result="Num";
+                $line=53;
+                if (($opEqualY(q,"RO")&&$opEqualY(\u03C3,"B"))) {
+                  $line=53;
+                  $result="ROB";
                   if (true) break $try;
                 }
                 else {
-                  $line=51;
-                  if (($opEqualY(q,"Num")&&$opMembrY(\u03C3,$opIntvlY('a','z')))) {
-                    $line=51;
-                    $result="Err";
+                  $line=54;
+                  if (($opEqualY(q,"ROB")&&$opEqualY(\u03C3,"O"))) {
+                    $line=54;
+                    $result="ROBO";
                     if (true) break $try;
                   }
                   else {
-                    $line=53;
-                    if (($opEqualY(q,"p")&&$opEqualY(\u03C3,'l'))) {
-                      $line=53;
-                      $result="pl";
+                    $line=55;
+                    if (($opEqualY(q,"ROBO")&&$opEqualY(\u03C3,"T"))) {
+                      $line=55;
+                      $result="ROBOT";
                       if (true) break $try;
                     }
                     else {
-                      $line=54;
-                      if (($opEqualY(q,"pl")&&$opEqualY(\u03C3,'u'))) {
-                        $line=54;
-                        $result="plu";
+                      $line=56;
+                      if (($opEqualY(q,"ROBOT")&&$opEqualY(\u03C3,"_"))) {
+                        $line=56;
+                        $result="ROBOT_";
                         if (true) break $try;
                       }
                       else {
-                        $line=55;
-                        if (($opEqualY(q,"plu")&&$opEqualY(\u03C3,'s'))) {
-                          $line=55;
-                          $result="plus";
-                          if (true) break $try;
+                        $line=57;
+                        if ($opEqualY(q,"ROBOT_")) {
                         }
                         else {
-                          $line=56;
-                          if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'i'))) {
-                            $line=56;
-                            $result="ti";
+                          $line=59;
+                          if (($opEqualY(q,"p")&&$opEqualY(\u03C3,'l'))) {
+                            $line=59;
+                            $result="pl";
                             if (true) break $try;
                           }
                           else {
-                            $line=57;
-                            if (($opEqualY(q,"ti")&&$opEqualY(\u03C3,'m'))) {
-                              $line=57;
-                              $result="tim";
+                            $line=60;
+                            if (($opEqualY(q,"pl")&&$opEqualY(\u03C3,'u'))) {
+                              $line=60;
+                              $result="plu";
                               if (true) break $try;
                             }
                             else {
-                              $line=58;
-                              if (($opEqualY(q,"tim")&&$opEqualY(\u03C3,'e'))) {
-                                $line=58;
-                                $result="time";
+                              $line=61;
+                              if (($opEqualY(q,"plu")&&$opEqualY(\u03C3,'s'))) {
+                                $line=61;
+                                $result="plus";
                                 if (true) break $try;
                               }
                               else {
-                                $line=59;
-                                if (($opEqualY(q,"time")&&$opEqualY(\u03C3,'s'))) {
-                                  $line=59;
-                                  $result="times";
+                                $line=62;
+                                if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'i'))) {
+                                  $line=62;
+                                  $result="ti";
                                   if (true) break $try;
                                 }
                                 else {
-                                  $line=62;
-                                  $result="Id";
-                                  if (true) break $try;
+                                  $line=63;
+                                  if (($opEqualY(q,"ti")&&$opEqualY(\u03C3,'m'))) {
+                                    $line=63;
+                                    $result="tim";
+                                    if (true) break $try;
+                                  }
+                                  else {
+                                    $line=64;
+                                    if (($opEqualY(q,"tim")&&$opEqualY(\u03C3,'e'))) {
+                                      $line=64;
+                                      $result="time";
+                                      if (true) break $try;
+                                    }
+                                    else {
+                                      $line=65;
+                                      if (($opEqualY(q,"time")&&$opEqualY(\u03C3,'s'))) {
+                                        $line=65;
+                                        $result="times";
+                                        if (true) break $try;
+                                      }
+                                      else {
+                                        $line=68;
+                                        $result="Id";
+                                        if (true) break $try;
+                                      }
+                                    }
+                                  }
                                 }
                               }
                             }
@@ -204,7 +225,7 @@ public final class Lexer {
           }
         }
       }
-      $line=64;
+      $line=70;
       $rethrow(new RuntimeException("The function \"\u03B4(q:Object,\u03C3:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -216,10 +237,10 @@ public final class Lexer {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=69;
+      $line=75;
       $result="";
       if (true) break $try;
-      $line=70;
+      $line=76;
       $rethrow(new RuntimeException("The function \"g(q:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -231,47 +252,47 @@ public final class Lexer {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=73;
+      $line=79;
       String s=null;
       s=$defaultValue(String.class);
-      $line=74;
+      $line=80;
       s=$cast(String.class,$fix(""));
-      $line=76;
+      $line=82;
       if ((!$opMembrY(q,GCollections.asSet("Err"))&&$opMembrY(\u03C3,GCollections.asSet('(',')',' ')))) {
-        $line=77;
+        $line=83;
         if (!$opMembrY(\u03C3,GCollections.asSet(' '))) {
-          $line=77;
+          $line=83;
           s=$cast(String.class,$fix($invokeMethod(String.class,"valueOf",true,null,new Object[]{\u03C3})));
         }
-        $line=78;
+        $line=84;
         if ($opEqualY(q,"I")) {
-          $line=78;
+          $line=84;
           $result=s;
           if (true) break $try;
         }
         else {
-          $line=79;
+          $line=85;
           if ($opEqualY(q,"plus")) {
-            $line=79;
+            $line=85;
             $result=$opAdditY("+",s);
             if (true) break $try;
           }
           else {
-            $line=80;
+            $line=86;
             if ($opEqualY(q,"times")) {
-              $line=80;
+              $line=86;
               $result=$opAdditY("*",s);
               if (true) break $try;
             }
             else {
-              $line=81;
+              $line=87;
               if ($opEqualY(q,"Num")) {
-                $line=81;
+                $line=87;
                 $result=$opAdditY("n",s);
                 if (true) break $try;
               }
               else {
-                $line=82;
+                $line=88;
                 $result=$opAdditY("v",s);
                 if (true) break $try;
               }
@@ -280,11 +301,11 @@ public final class Lexer {
         }
       }
       else {
-        $line=84;
+        $line=90;
         $result="";
         if (true) break $try;
       }
-      $line=86;
+      $line=92;
       $rethrow(new RuntimeException("The function \"h(q:Object,\u03C3:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
