@@ -35,38 +35,141 @@ function createTransducer():ITransducer begin
 	Q:= {"Init","R", "RO", "ROB" ,"ROBO", "ROBOT", "ROBOT_", "ROBOT_R" ,"V", "VA", "VAR", "VARS","B", "BE", "BEG", "BEGI","BEGIN", "E", "EN", "END",
 	"a", "as","ass", "assi","assig", "assign", "t", "to","m","mo","mov","move", "t","tu", "tur","turn","f","fa","fac","face","p","pu", "put","o","of",
 	"p","pi","pic","pick","T","To","ToT","ToTh","ToThe","i","in","inD","inDi","inDir", "r","ri","rig", "rigt", "rigth", "l", "le", "lef", "left", "b",
-	"ba", "bac", "back", "f", "fr", "fro", "fron", "front"}
+	"ba", "bac", "back", "f", "fr", "fro", "fron", "front", "Num","Nombre"}
 	
 	Σ:=('0'‥'9') ∪ ('a' ‥ 'z') ∪ {'(',')',' '} 
-	Out:={'(',')','+','*','v','n'} 
+	Out:={'N','K','(',')','R','V','B','A','m','t','F',',',';','p','P','M','E','n','v','a','f','o','s','w','e','r','l','b','L','C'}
 	q₀:="I"
-	F:= {"I"}
+	F:= {"I"}∪{"END"}
 	return 	GDeterministicTransducer(Q,Σ,Out,q₀,F,δ,g,h)
 end
 
 function δ(q,σ) begin
 	if (q = "Err") then return "Err"
 	elseif  σ ∈ {'(',')',' ', '\n' , ',' , '\t' , ';' , ':'} then return "Init"
-	elseif σ ∈ {'0'‥'9'} then return "Init"
+	
+		
     elseif q="Init" and σ='R' then return "R"
 	elseif q="R" and σ='O' then return "RO"
-	elseif q="RO" and σ ="B" then return "ROB"
-	elseif	q="ROB" and σ ="O" then return "ROBO"
-	elseif	q="ROBO" and σ = "T" then return "ROBOT"
-	elseif	q="ROBOT" and σ = "_" then return "ROBOT_"
-	elseif q="ROBOT_" then
+	elseif q="RO" and σ ='B' then return "ROB"
+	elseif	q="ROB" and σ ='O' then return "ROBO"
+	elseif	q="ROBO" and σ = 'T' then return "ROBOT"
+	elseif	q="ROBOT" and σ = '_' then return "ROBOT_"
+	elseif q="ROBOT_" and σ = 'R' then return "ROBOT_R"
+	elseif q="ROBOT_R" then return "Init"
+		
+	elseif q="Init" and σ='V'  then return "V"	
+	elseif q="V" and σ='A'  then return "VA"
+	elseif q="VA" and σ='R'  then return "VAR"
+	elseif q="VAR" and σ='S'  then return "VARS"
+	elseif q="VARS" then return "Init"
+		
+	elseif q="Init" and σ='B'  then return "B"
+	elseif q="B" and σ='E'  then return "BE"
+	elseif q="BE" and σ='G'  then return "BEG"		
+	elseif q="BEG" and σ='I'  then return "BEGI"			
+	elseif q="BEGIN" and σ='N'  then return "BEGIN"		
+	elseif q="BEGIN" then return "Init"
+		
+	elseif q="Init" and σ='E'  then return "E"
+	elseif q="E" and σ='N'  then return "EN"
+	elseif q="EN" and σ='D'  then return "END"		
+	elseif q="END" then return "Init"
 	
-	elseif q="p" and σ='l' then return "pl" 
-    elseif q="pl" and σ='u' then return "plu" 
-    elseif q="plu" and σ='s' then return "plus" 
-	elseif q="t" and σ='i' then return "ti" 
-    elseif q="ti" and σ='m' then return "tim" 
-    elseif q="tim" and σ='e' then return "time" 
-    elseif q="time" and σ='s' then return "times" 
-    
-    
-    else  return "Id"
-    end	
+	elseif q="Init" and σ='a'  then return "a"
+	elseif q="a" and σ='s'  then return "as"
+	elseif q="as" and σ='s'  then return "ass"
+	elseif q="ass" and σ='i'  then return "assi"
+	elseif q="assi" and σ='g'  then return "assig"
+	elseif q="assig" and σ='n'  then return "assign"	
+	elseif q="assign" then return "Init"
+	
+	elseif q="Init" and σ='t'  then return "t"
+	elseif q="t" and σ='o'  then return "to"
+	elseif q="to" then return "Init"
+	
+	elseif q="Init" and σ='m'  then return "m"
+	elseif q="m" and σ='o'  then return "mo"
+	elseif q="mo" and σ='v'  then return "mov"
+	elseif q="mov" and σ='e'  then return "move"
+	elseif q="move" then return "Init"
+		
+	elseif q="Init" and σ='t'  then return "t"
+	elseif q="t" and σ='u'  then return "tu"
+	elseif q="tu" and σ='r'  then return "tur"
+	elseif q="tur" and σ='n'  then return "turn"
+	elseif q="turn" then return "Init"
+					
+	elseif q="Init" and σ='f'  then return "f"
+	elseif q="f" and σ='a'  then return "fa"
+	elseif q="fa" and σ='c'  then return "fac"		
+	elseif q="face" then return "Init"
+		
+	elseif q="Init" and σ='p'  then return "p"
+	elseif q="p" and σ='u'  then return "pu"
+	elseif q="pu" and σ='t'  then return "put"
+	elseif q="put" then return "Init"
+		
+	elseif q="Init" and σ='o'  then return "o"
+	elseif q="o" and σ='o'  then return "of"
+	elseif q="of" then return "Init"
+	
+	elseif q="Init" and σ='p'  then return "p"
+	elseif q="p" and σ='i'  then return "pi"
+	elseif q="pi" and σ='c'  then return "pic"
+	elseif q="pic" and σ='k'  then return "pick"
+	elseif q="pick" then return "Init"
+			
+	elseif q="Init" and σ='T'  then return "T"
+	elseif q="T" and σ='o'  then return "To"
+	elseif q="To" and σ='T'  then return "ToT"
+	elseif q="ToT" and σ='h'  then return "ToTh"
+	elseif q="ToTh" and σ='e'  then return "ToThe"
+	elseif q="ToThe" then return "Init"
+		
+	elseif q="Init" and σ='i'  then return "i"
+	elseif q="i" and σ='n'  then return "in"
+	elseif q="in" and σ='D'  then return "inD"
+	elseif q="inD" and σ='i'  then return "inDir"
+	elseif q="inDir" then return "Init"
+		
+	elseif q="Init" and σ='r'  then return "r"
+	elseif q="r" and σ='i'  then return "ri"
+	elseif q="ri" and σ='g'  then return "rig"
+	elseif q="rig" and σ='h'  then return "righ"
+	elseif q="rig" and σ='t'  then return "right"
+	elseif q="right" then return "Init"
+		
+	elseif q="Init" and σ='l'  then return "l"
+	elseif q="l" and σ='e'  then return "le"
+	elseif q="le" and σ='f'  then return "lef"
+	elseif q="lef" and σ='t'  then return "left"
+	elseif q="left" then return "Init"
+		
+	elseif q="Init" and σ='b'  then return "b"
+	elseif q="b" and σ='a'  then return "ba"
+	elseif q="ba" and σ='c'  then return "bac"
+	elseif q="bac" and σ='k'  then return "back"
+	elseif q="back" then return "Init"
+	
+	elseif q="Init" and σ='f'  then return "f"
+	elseif q="f" and σ='r'  then return "fr"
+	elseif q="fr" and σ='o'  then return "fro"
+	elseif q="fro" and σ='n'  then return "front"
+	elseif q="front" then return "Init"
+	
+	elseif q="Init" and σ ∈ ('0' ‥ '9') then return "Num"
+	elseif	q="Num" and σ ∈ ('0' ‥ '9') then return "Num"
+	elseif q=="Num" then return "Init"	
+		
+	elseif q="I" and σ ∈ ('a' ‥ 'z') then return "Nombre"
+	elseif q="Nombre" and σ ∈ ('a' ‥ 'z') then return "Nombre"
+	elseif q=="Nombre" then return "I"
+			
+	else return "Init"
+		
+	end
+	
 end 
 
 
@@ -75,18 +178,62 @@ function g(q) begin
 	return λ
 end
 
-function h(q,σ) begin
-	var s: String
-	s := λ
 
-	if q ∉ {"Err"} and σ ∈ {'(',')',' '} then
-		if σ ∉ {' '} then  s=String.valueOf(σ) end
-		if q=="I" then return s
-    	elseif q=="plus" then return "+"+s 
-   		elseif q=="times" then return "*"+s
-		elseif q=="Num" then return "n"+s
-		else return "v"+s
- 		end
-	else return  λ
-	end
+function h(q,σ) begin
+		var s: String
+		s:= λ
+		
+		if q=="Error" then return s
+			
+		elseif σ∈{'(',')',' ',',','\n','\t',';'} then
+			if σ∉{' ','\n','\t'} then s:=String.valueOf(σ) end
+				
+			if q=="I" then return s
+				
+			elseif q=="ROBOT_R" then return "R"
+				
+			elseif q=="VARS" then return "V"
+				
+			elseif q=="BEGIN" then return "B"
+				
+			elseif q=="assign" then return "a"+s
+				
+			elseif q=="move" then return "m"+s
+				
+			elseif q=="turn" then return "t"+s
+				
+			elseif q=="face" then return "F"+s
+				
+			elseif q=="put" then return "P"+s
+				
+			elseif q=="pick" then return "p"+s
+			
+			elseif q=="moveInDir" then return "M"+s
+				
+			elseif q=="END" then return "E"
+				
+			elseif q=="Num" then return "n"+s
+				
+			elseif q=="front" then return "f"+s
+				
+			elseif q=="right" then return "r"+s
+				
+			elseif q=="left" then return "l"+s
+				
+			elseif q=="around" then return "a"+s
+				
+			elseif q=="back" then return "b"+s
+	
+			elseif q=="Skip" then return "K"+s
+				
+			elseif q=="Nombre" then return "N"+s
+				
+				
+			else return "v"+s
+				
+			end
+			
+		else return λ
+			
+		end
 end
