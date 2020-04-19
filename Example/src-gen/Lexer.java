@@ -1747,44 +1747,44 @@ public final class Lexer {
                     }
                     else {
                       $line=320;
-                      if ($opEqualY(q,"ToThe")) {
+                      if ($opEqualY(q,"InDir")) {
                         $line=320;
-                        $result=$opAdditY("T",s);
+                        $result=$opAdditY("D",s);
                         if (true) break $try;
                       }
                       else {
                         $line=322;
-                        if ($opEqualY(q,"turn")) {
+                        if ($opEqualY(q,"ToThe")) {
                           $line=322;
-                          $result=$opAdditY("t",s);
+                          $result=$opAdditY("T",s);
                           if (true) break $try;
                         }
                         else {
                           $line=324;
-                          if ($opEqualY(q,"face")) {
+                          if ($opEqualY(q,"turn")) {
                             $line=324;
-                            $result=$opAdditY("F",s);
+                            $result=$opAdditY("t",s);
                             if (true) break $try;
                           }
                           else {
                             $line=326;
-                            if ($opEqualY(q,"put")) {
+                            if ($opEqualY(q,"face")) {
                               $line=326;
-                              $result=$opAdditY("P",s);
+                              $result=$opAdditY("f",s);
                               if (true) break $try;
                             }
                             else {
                               $line=328;
-                              if ($opEqualY(q,"pick")) {
+                              if ($opEqualY(q,"put")) {
                                 $line=328;
-                                $result=$opAdditY("p",s);
+                                $result=$opAdditY("P",s);
                                 if (true) break $try;
                               }
                               else {
                                 $line=330;
-                                if ($opEqualY(q,"InDir")) {
+                                if ($opEqualY(q,"pick")) {
                                   $line=330;
-                                  $result=$opAdditY("M",s);
+                                  $result=$opAdditY("p",s);
                                   if (true) break $try;
                                 }
                                 else {
@@ -1805,35 +1805,35 @@ public final class Lexer {
                                       $line=336;
                                       if ($opEqualY(q,"front")) {
                                         $line=336;
-                                        $result=$opAdditY("f",s);
+                                        $result=$opAdditY("F",s);
                                         if (true) break $try;
                                       }
                                       else {
                                         $line=338;
                                         if ($opEqualY(q,"right")) {
                                           $line=338;
-                                          $result=$opAdditY("r",s);
+                                          $result=$opAdditY("R",s);
                                           if (true) break $try;
                                         }
                                         else {
                                           $line=340;
                                           if ($opEqualY(q,"left")) {
                                             $line=340;
-                                            $result=$opAdditY("l",s);
+                                            $result=$opAdditY("L",s);
                                             if (true) break $try;
                                           }
                                           else {
                                             $line=342;
                                             if ($opEqualY(q,"around")) {
                                               $line=342;
-                                              $result=$opAdditY("a",s);
+                                              $result=$opAdditY("r",s);
                                               if (true) break $try;
                                             }
                                             else {
                                               $line=344;
                                               if ($opEqualY(q,"back")) {
                                                 $line=344;
-                                                $result=$opAdditY("b",s);
+                                                $result=$opAdditY("K",s);
                                                 if (true) break $try;
                                               }
                                               else {
@@ -1861,7 +1861,7 @@ public final class Lexer {
                                                       $line=354;
                                                       if ($opEqualY(q,"else")) {
                                                         $line=354;
-                                                        $result=$opAdditY("e",s);
+                                                        $result=$opAdditY("l",s);
                                                         if (true) break $try;
                                                       }
                                                       else {
@@ -1896,14 +1896,14 @@ public final class Lexer {
                                                                 $line=364;
                                                                 if ($opEqualY(q,"facing")) {
                                                                   $line=364;
-                                                                  $result=$opAdditY("f",s);
+                                                                  $result=$opAdditY("g",s);
                                                                   if (true) break $try;
                                                                 }
                                                                 else {
                                                                   $line=366;
                                                                   if ($opEqualY(q,"canPut")) {
                                                                     $line=366;
-                                                                    $result=$opAdditY("c",s);
+                                                                    $result=$opAdditY("u",s);
                                                                     if (true) break $try;
                                                                   }
                                                                   else {
@@ -1924,7 +1924,7 @@ public final class Lexer {
                                                                         $line=372;
                                                                         if ($opEqualY(q,"not")) {
                                                                           $line=372;
-                                                                          $result=$opAdditY("n",s);
+                                                                          $result=$opAdditY("x",s);
                                                                           if (true) break $try;
                                                                         }
                                                                         else {
@@ -1936,16 +1936,16 @@ public final class Lexer {
                                                                           }
                                                                           else {
                                                                             $line=376;
-                                                                            if ($opEqualY(q,"b")) {
+                                                                            if ($opEqualY(q,"Balloons")) {
                                                                               $line=376;
-                                                                              $result=$opAdditY("B",s);
+                                                                              $result=$opAdditY("O",s);
                                                                               if (true) break $try;
                                                                             }
                                                                             else {
                                                                               $line=378;
                                                                               if ($opEqualY(q,"north")) {
                                                                                 $line=378;
-                                                                                $result=$opAdditY("n",s);
+                                                                                $result=$opAdditY("z",s);
                                                                                 if (true) break $try;
                                                                               }
                                                                               else {
@@ -1970,32 +1970,16 @@ public final class Lexer {
                                                                                       if (true) break $try;
                                                                                     }
                                                                                     else {
-                                                                                      $line=386;
-                                                                                      if ($opEqualY(q,"inDir")) {
-                                                                                        $line=386;
-                                                                                        $result=$opAdditY("i",s);
+                                                                                      $line=388;
+                                                                                      if ($opEqualY(q,"To")) {
+                                                                                        $line=388;
+                                                                                        $result=$opAdditY("U",s);
                                                                                         if (true) break $try;
                                                                                       }
                                                                                       else {
-                                                                                        $line=388;
-                                                                                        if ($opEqualY(q,"To")) {
-                                                                                          $line=388;
-                                                                                          $result=$opAdditY("t",s);
-                                                                                          if (true) break $try;
-                                                                                        }
-                                                                                        else {
-                                                                                          $line=392;
-                                                                                          if ($opEqualY(q,"do")) {
-                                                                                            $line=392;
-                                                                                            $result=$opAdditY("d",s);
-                                                                                            if (true) break $try;
-                                                                                          }
-                                                                                          else {
-                                                                                            $line=393;
-                                                                                            $result=$opAdditY("v",s);
-                                                                                            if (true) break $try;
-                                                                                          }
-                                                                                        }
+                                                                                        $line=393;
+                                                                                        $result=$opAdditY("v",s);
+                                                                                        if (true) break $try;
                                                                                       }
                                                                                     }
                                                                                   }
