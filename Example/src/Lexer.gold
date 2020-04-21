@@ -302,7 +302,7 @@ function h(q,σ) begin
 		
 		if q=="Error" then return s
 			
-		elseif σ∈{'(',')',' ',',','\n','\t',';',':'} then
+		elseif σ∈{'(',')',' ',',','\n','\t',';',':', ' '} then
 			if σ∉{' ','\n','\t'} then s:=String.valueOf(σ) end
 				
 			if q=="I" then return s
@@ -387,7 +387,7 @@ function h(q,σ) begin
 				
 			elseif q=="To" then return "U"+s // cambié t por U
 			
-			
+		
 				
 			//elseif q=="do" then return "d"+s
 			else return "v"+s
