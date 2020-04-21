@@ -1698,7 +1698,7 @@ public final class Lexer {
       }
       else {
         $line=305;
-        if ($opMembrY(\u03C3,GCollections.asSet('(',')',' ',',','\n','\t',';',':'))) {
+        if ($opMembrY(\u03C3,GCollections.asSet('(',')',' ',',','\n','\t',';',':',' '))) {
           $line=306;
           if (!$opMembrY(\u03C3,GCollections.asSet(' ','\n','\t'))) {
             $line=306;
