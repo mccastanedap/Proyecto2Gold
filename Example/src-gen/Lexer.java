@@ -63,19 +63,19 @@ public final class Lexer {
     Object $result=null;
     $try:try {
       $line=35;
-      Object Q=$fix(GCollections.asSet("Init","R","RO","ROB","ROBO","ROBOT","ROBOT_","ROBOT_R","V","VA","VAR","VARS","B","BE","BEG","BEGI","BEGIN","E","EN","END","a","as","ass","assi","assig","assign","t","to","m","mo","mov","move","t","tu","tur","turn","f","fa","fac","face","p","pu","put","o","of","p","pi","pic","pick","T","To","ToT","ToTh","ToThe","i","in","inD","inDi","inDir","r","ri","rig","rigt","rigth","l","le","lef","left","b","ba","bac","back","f","fr","fro","fron","front","Num","Nombre","i","if","t","th","the","then","e","el","els","else","w","wh","whi","whil","while","d","do","r","re","rep","repe","repet","repeat","t","ti","tim","time","times","f","fa","fac","faci","facin","facing","c","ca","can","canPut","o","of","c","ca","can","canM","canMo","canMov","canMove","n","no","not","C","Ch","Chi","Chip","Chips","B","Ba","Bal","Ball","Ballo","Ballon","Ballons","n","no","nor","nort","north","s","so","sou","sout","south","w","we","wes","west","e","ea","eas","east"));
-      $line=43;
-      Object \u03A3=$fix($opUnionY($opUnionY($opIntvlY('0','9'),$opIntvlY('a','z')),GCollections.asSet('(',')',' ')));
+      Object Q=$fix(GCollections.asSet("Init","R","RO","ROB","ROBO","ROBOT","ROBOT_","ROBOT_R","V","VA","VAR","VARS","B","BE","BEG","BEGI","BEGIN","E","EN","END","a","as","ass","assi","assig","assign","t","to","m","mo","mov","move","t","tu","tur","turn","f","fa","fac","face","p","pu","put","o","of","p","pi","pic","pick","T","To","ToT","ToTh","ToThe","i","in","inD","inDi","inDir","r","ri","rig","righ","right","l","le","lef","left","b","ba","bac","back","f","fr","fro","fron","front","Num","Nombre","i","if","t","th","the","then","e","el","els","else","w","wh","whi","whil","while","d","do","r","re","rep","repe","repea","repeat","t","ti","tim","time","times","f","fa","fac","faci","facin","facing","c","ca","can","canP","canPu","canPut","o","of","c","ca","can","canM","canMo","canMov","canMove","n","no","not","C","Ch","Chi","Chip","Chips","B","Ba","Bal","Ball","Ballo","Ballon","Ballons","n","no","nor","nort","north","s","so","sou","sout","south","w","we","wes","west","e","ea","eas","east","ERROR"));
       $line=44;
-      Object Out=$fix(GCollections.asSet('N','K','(',')','R','V','B','A','m','t','F',',',';','p','P','M','E','n','v','a','f','o','s','w','e','r','l','b','L','C'));
+      Object \u03A3=$fix($opUnionY($opUnionY($opUnionY($opIntvlY('0','9'),$opIntvlY('a','z')),$opIntvlY('A','Z')),GCollections.asSet('(',')',' ','_')));
       $line=45;
-      Object q_0=$fix("I");
+      Object Out=$fix(GCollections.asSet('R','V','B','a','m','D','T','x','C','O','z','s','e','W','U','t','f','p','E','n','F','R','L','r','k','N','i','h','l','w','d','r','I','g','u','o','c','v','P','K','$'));
       $line=46;
-      Object F=$fix($opUnionY(GCollections.asSet("I"),GCollections.asSet("END")));
+      Object q_0=$fix("Init");
       $line=47;
+      Object F=$fix($opUnionY($opUnionY(GCollections.asSet("Init"),GCollections.asSet("END")),GCollections.asSet("ERROR")));
+      $line=48;
       $result=$invokeConstructor(GDeterministicTransducer.class,new Object[]{Q,\u03A3,Out,q_0,F,new GMethod(Lexer.class,"\u03B4"),new GMethod(Lexer.class,"g"),new GMethod(Lexer.class,"h")});
       if (true) break $try;
-      $line=48;
+      $line=49;
       $rethrow(new RuntimeException("The function \"createTransducer()\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -87,1417 +87,1129 @@ public final class Lexer {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=51;
-      if ($bool($opEqualY(q,"Err"))) {
-        $line=51;
-        $result="Err";
+      $line=52;
+      if ($bool($opEqualY(q,"ERROR"))) {
+        $line=52;
+        $result="ERROR";
         if (true) break $try;
       }
       else {
-        $line=52;
+        $line=53;
         if ($opMembrY(\u03C3,GCollections.asSet('(',')',' ','\n',',','\t',';',':'))) {
-          $line=52;
+          $line=53;
           $result="Init";
           if (true) break $try;
         }
         else {
-          $line=55;
+          $line=56;
           if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'R'))) {
-            $line=55;
+            $line=56;
             $result="R";
             if (true) break $try;
           }
           else {
-            $line=56;
+            $line=57;
             if (($opEqualY(q,"R")&&$opEqualY(\u03C3,'O'))) {
-              $line=56;
+              $line=57;
               $result="RO";
               if (true) break $try;
             }
             else {
-              $line=57;
+              $line=58;
               if (($opEqualY(q,"RO")&&$opEqualY(\u03C3,'B'))) {
-                $line=57;
+                $line=58;
                 $result="ROB";
                 if (true) break $try;
               }
               else {
-                $line=58;
+                $line=59;
                 if (($opEqualY(q,"ROB")&&$opEqualY(\u03C3,'O'))) {
-                  $line=58;
+                  $line=59;
                   $result="ROBO";
                   if (true) break $try;
                 }
                 else {
-                  $line=59;
+                  $line=60;
                   if (($opEqualY(q,"ROBO")&&$opEqualY(\u03C3,'T'))) {
-                    $line=59;
+                    $line=60;
                     $result="ROBOT";
                     if (true) break $try;
                   }
                   else {
-                    $line=60;
+                    $line=61;
                     if (($opEqualY(q,"ROBOT")&&$opEqualY(\u03C3,'_'))) {
-                      $line=60;
+                      $line=61;
                       $result="ROBOT_";
                       if (true) break $try;
                     }
                     else {
-                      $line=61;
+                      $line=62;
                       if (($opEqualY(q,"ROBOT_")&&$opEqualY(\u03C3,'R'))) {
-                        $line=61;
+                        $line=62;
                         $result="ROBOT_R";
                         if (true) break $try;
                       }
                       else {
-                        $line=62;
-                        if ($opEqualY(q,"ROBOT_R")) {
-                          $line=62;
-                          $result="Init";
+                        $line=65;
+                        if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'V'))) {
+                          $line=65;
+                          $result="V";
                           if (true) break $try;
                         }
                         else {
-                          $line=64;
-                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'V'))) {
-                            $line=64;
-                            $result="V";
+                          $line=66;
+                          if (($opEqualY(q,"V")&&$opEqualY(\u03C3,'A'))) {
+                            $line=66;
+                            $result="VA";
                             if (true) break $try;
                           }
                           else {
-                            $line=65;
-                            if (($opEqualY(q,"V")&&$opEqualY(\u03C3,'A'))) {
-                              $line=65;
-                              $result="VA";
+                            $line=67;
+                            if (($opEqualY(q,"VA")&&$opEqualY(\u03C3,'R'))) {
+                              $line=67;
+                              $result="VAR";
                               if (true) break $try;
                             }
                             else {
-                              $line=66;
-                              if (($opEqualY(q,"VA")&&$opEqualY(\u03C3,'R'))) {
-                                $line=66;
-                                $result="VAR";
+                              $line=68;
+                              if (($opEqualY(q,"VAR")&&$opEqualY(\u03C3,'S'))) {
+                                $line=68;
+                                $result="VARS";
                                 if (true) break $try;
                               }
                               else {
-                                $line=67;
-                                if (($opEqualY(q,"VAR")&&$opEqualY(\u03C3,'S'))) {
-                                  $line=67;
-                                  $result="VARS";
+                                $line=71;
+                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'B'))) {
+                                  $line=71;
+                                  $result="B";
                                   if (true) break $try;
                                 }
                                 else {
-                                  $line=68;
-                                  if ($opEqualY(q,"VARS")) {
-                                    $line=68;
-                                    $result="Init";
+                                  $line=72;
+                                  if (($opEqualY(q,"B")&&$opEqualY(\u03C3,'E'))) {
+                                    $line=72;
+                                    $result="BE";
                                     if (true) break $try;
                                   }
                                   else {
-                                    $line=70;
-                                    if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'B'))) {
-                                      $line=70;
-                                      $result="B";
+                                    $line=73;
+                                    if (($opEqualY(q,"BE")&&$opEqualY(\u03C3,'G'))) {
+                                      $line=73;
+                                      $result="BEG";
                                       if (true) break $try;
                                     }
                                     else {
-                                      $line=71;
-                                      if (($opEqualY(q,"B")&&$opEqualY(\u03C3,'E'))) {
-                                        $line=71;
-                                        $result="BE";
+                                      $line=74;
+                                      if (($opEqualY(q,"BEG")&&$opEqualY(\u03C3,'I'))) {
+                                        $line=74;
+                                        $result="BEGI";
                                         if (true) break $try;
                                       }
                                       else {
-                                        $line=72;
-                                        if (($opEqualY(q,"BE")&&$opEqualY(\u03C3,'G'))) {
-                                          $line=72;
-                                          $result="BEG";
+                                        $line=75;
+                                        if (($opEqualY(q,"BEGIN")&&$opEqualY(\u03C3,'N'))) {
+                                          $line=75;
+                                          $result="BEGIN";
                                           if (true) break $try;
                                         }
                                         else {
-                                          $line=73;
-                                          if (($opEqualY(q,"BEG")&&$opEqualY(\u03C3,'I'))) {
-                                            $line=73;
-                                            $result="BEGI";
+                                          $line=78;
+                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'E'))) {
+                                            $line=78;
+                                            $result="E";
                                             if (true) break $try;
                                           }
                                           else {
-                                            $line=74;
-                                            if (($opEqualY(q,"BEGIN")&&$opEqualY(\u03C3,'N'))) {
-                                              $line=74;
-                                              $result="BEGIN";
+                                            $line=79;
+                                            if (($opEqualY(q,"E")&&$opEqualY(\u03C3,'N'))) {
+                                              $line=79;
+                                              $result="EN";
                                               if (true) break $try;
                                             }
                                             else {
-                                              $line=75;
-                                              if ($opEqualY(q,"BEGIN")) {
-                                                $line=75;
-                                                $result="Init";
+                                              $line=80;
+                                              if (($opEqualY(q,"EN")&&$opEqualY(\u03C3,'D'))) {
+                                                $line=80;
+                                                $result="END";
                                                 if (true) break $try;
                                               }
                                               else {
-                                                $line=77;
-                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'E'))) {
-                                                  $line=77;
-                                                  $result="E";
+                                                $line=83;
+                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'a'))) {
+                                                  $line=83;
+                                                  $result="a";
                                                   if (true) break $try;
                                                 }
                                                 else {
-                                                  $line=78;
-                                                  if (($opEqualY(q,"E")&&$opEqualY(\u03C3,'N'))) {
-                                                    $line=78;
-                                                    $result="EN";
+                                                  $line=84;
+                                                  if (($opEqualY(q,"a")&&$opEqualY(\u03C3,'s'))) {
+                                                    $line=84;
+                                                    $result="as";
                                                     if (true) break $try;
                                                   }
                                                   else {
-                                                    $line=79;
-                                                    if (($opEqualY(q,"EN")&&$opEqualY(\u03C3,'D'))) {
-                                                      $line=79;
-                                                      $result="END";
+                                                    $line=85;
+                                                    if (($opEqualY(q,"as")&&$opEqualY(\u03C3,'s'))) {
+                                                      $line=85;
+                                                      $result="ass";
                                                       if (true) break $try;
                                                     }
                                                     else {
-                                                      $line=80;
-                                                      if ($opEqualY(q,"END")) {
-                                                        $line=80;
-                                                        $result="Init";
+                                                      $line=86;
+                                                      if (($opEqualY(q,"ass")&&$opEqualY(\u03C3,'i'))) {
+                                                        $line=86;
+                                                        $result="assi";
                                                         if (true) break $try;
                                                       }
                                                       else {
-                                                        $line=82;
-                                                        if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'a'))) {
-                                                          $line=82;
-                                                          $result="a";
+                                                        $line=87;
+                                                        if (($opEqualY(q,"assi")&&$opEqualY(\u03C3,'g'))) {
+                                                          $line=87;
+                                                          $result="assig";
                                                           if (true) break $try;
                                                         }
                                                         else {
-                                                          $line=83;
-                                                          if (($opEqualY(q,"a")&&$opEqualY(\u03C3,'s'))) {
-                                                            $line=83;
-                                                            $result="as";
+                                                          $line=88;
+                                                          if (($opEqualY(q,"assig")&&$opEqualY(\u03C3,'n'))) {
+                                                            $line=88;
+                                                            $result="assign";
                                                             if (true) break $try;
                                                           }
                                                           else {
-                                                            $line=84;
-                                                            if (($opEqualY(q,"as")&&$opEqualY(\u03C3,'s'))) {
-                                                              $line=84;
-                                                              $result="ass";
+                                                            $line=91;
+                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'t'))) {
+                                                              $line=91;
+                                                              $result="t";
                                                               if (true) break $try;
                                                             }
                                                             else {
-                                                              $line=85;
-                                                              if (($opEqualY(q,"ass")&&$opEqualY(\u03C3,'i'))) {
-                                                                $line=85;
-                                                                $result="assi";
+                                                              $line=92;
+                                                              if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'o'))) {
+                                                                $line=92;
+                                                                $result="to";
                                                                 if (true) break $try;
                                                               }
                                                               else {
-                                                                $line=86;
-                                                                if (($opEqualY(q,"assi")&&$opEqualY(\u03C3,'g'))) {
-                                                                  $line=86;
-                                                                  $result="assig";
+                                                                $line=95;
+                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'m'))) {
+                                                                  $line=95;
+                                                                  $result="m";
                                                                   if (true) break $try;
                                                                 }
                                                                 else {
-                                                                  $line=87;
-                                                                  if (($opEqualY(q,"assig")&&$opEqualY(\u03C3,'n'))) {
-                                                                    $line=87;
-                                                                    $result="assign";
+                                                                  $line=96;
+                                                                  if (($opEqualY(q,"m")&&$opEqualY(\u03C3,'o'))) {
+                                                                    $line=96;
+                                                                    $result="mo";
                                                                     if (true) break $try;
                                                                   }
                                                                   else {
-                                                                    $line=88;
-                                                                    if ($opEqualY(q,"assign")) {
-                                                                      $line=88;
-                                                                      $result="Init";
+                                                                    $line=97;
+                                                                    if (($opEqualY(q,"mo")&&$opEqualY(\u03C3,'v'))) {
+                                                                      $line=97;
+                                                                      $result="mov";
                                                                       if (true) break $try;
                                                                     }
                                                                     else {
-                                                                      $line=90;
-                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'t'))) {
-                                                                        $line=90;
-                                                                        $result="t";
+                                                                      $line=98;
+                                                                      if (($opEqualY(q,"mov")&&$opEqualY(\u03C3,'e'))) {
+                                                                        $line=98;
+                                                                        $result="move";
                                                                         if (true) break $try;
                                                                       }
                                                                       else {
-                                                                        $line=91;
-                                                                        if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'o'))) {
-                                                                          $line=91;
-                                                                          $result="to";
+                                                                        $line=101;
+                                                                        if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'t'))) {
+                                                                          $line=101;
+                                                                          $result="t";
                                                                           if (true) break $try;
                                                                         }
                                                                         else {
-                                                                          $line=92;
-                                                                          if ($opEqualY(q,"to")) {
-                                                                            $line=92;
-                                                                            $result="Init";
+                                                                          $line=102;
+                                                                          if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'u'))) {
+                                                                            $line=102;
+                                                                            $result="tu";
                                                                             if (true) break $try;
                                                                           }
                                                                           else {
-                                                                            $line=94;
-                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'m'))) {
-                                                                              $line=94;
-                                                                              $result="m";
+                                                                            $line=103;
+                                                                            if (($opEqualY(q,"tu")&&$opEqualY(\u03C3,'r'))) {
+                                                                              $line=103;
+                                                                              $result="tur";
                                                                               if (true) break $try;
                                                                             }
                                                                             else {
-                                                                              $line=95;
-                                                                              if (($opEqualY(q,"m")&&$opEqualY(\u03C3,'o'))) {
-                                                                                $line=95;
-                                                                                $result="mo";
+                                                                              $line=104;
+                                                                              if (($opEqualY(q,"tur")&&$opEqualY(\u03C3,'n'))) {
+                                                                                $line=104;
+                                                                                $result="turn";
                                                                                 if (true) break $try;
                                                                               }
                                                                               else {
-                                                                                $line=96;
-                                                                                if (($opEqualY(q,"mo")&&$opEqualY(\u03C3,'v'))) {
-                                                                                  $line=96;
-                                                                                  $result="mov";
+                                                                                $line=107;
+                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'f'))) {
+                                                                                  $line=107;
+                                                                                  $result="f";
                                                                                   if (true) break $try;
                                                                                 }
                                                                                 else {
-                                                                                  $line=97;
-                                                                                  if (($opEqualY(q,"mov")&&$opEqualY(\u03C3,'e'))) {
-                                                                                    $line=97;
-                                                                                    $result="move";
+                                                                                  $line=108;
+                                                                                  if (($opEqualY(q,"f")&&$opEqualY(\u03C3,'a'))) {
+                                                                                    $line=108;
+                                                                                    $result="fa";
                                                                                     if (true) break $try;
                                                                                   }
                                                                                   else {
-                                                                                    $line=98;
-                                                                                    if ($opEqualY(q,"move")) {
-                                                                                      $line=98;
-                                                                                      $result="Init";
+                                                                                    $line=109;
+                                                                                    if (($opEqualY(q,"fa")&&$opEqualY(\u03C3,'c'))) {
+                                                                                      $line=109;
+                                                                                      $result="fac";
                                                                                       if (true) break $try;
                                                                                     }
                                                                                     else {
-                                                                                      $line=100;
-                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'t'))) {
-                                                                                        $line=100;
-                                                                                        $result="t";
+                                                                                      $line=112;
+                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'p'))) {
+                                                                                        $line=112;
+                                                                                        $result="p";
                                                                                         if (true) break $try;
                                                                                       }
                                                                                       else {
-                                                                                        $line=101;
-                                                                                        if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'u'))) {
-                                                                                          $line=101;
-                                                                                          $result="tu";
+                                                                                        $line=113;
+                                                                                        if (($opEqualY(q,"p")&&$opEqualY(\u03C3,'u'))) {
+                                                                                          $line=113;
+                                                                                          $result="pu";
                                                                                           if (true) break $try;
                                                                                         }
                                                                                         else {
-                                                                                          $line=102;
-                                                                                          if (($opEqualY(q,"tu")&&$opEqualY(\u03C3,'r'))) {
-                                                                                            $line=102;
-                                                                                            $result="tur";
+                                                                                          $line=114;
+                                                                                          if (($opEqualY(q,"pu")&&$opEqualY(\u03C3,'t'))) {
+                                                                                            $line=114;
+                                                                                            $result="put";
                                                                                             if (true) break $try;
                                                                                           }
                                                                                           else {
-                                                                                            $line=103;
-                                                                                            if (($opEqualY(q,"tur")&&$opEqualY(\u03C3,'n'))) {
-                                                                                              $line=103;
-                                                                                              $result="turn";
+                                                                                            $line=117;
+                                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'o'))) {
+                                                                                              $line=117;
+                                                                                              $result="o";
                                                                                               if (true) break $try;
                                                                                             }
                                                                                             else {
-                                                                                              $line=104;
-                                                                                              if ($opEqualY(q,"turn")) {
-                                                                                                $line=104;
-                                                                                                $result="Init";
+                                                                                              $line=118;
+                                                                                              if (($opEqualY(q,"o")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                $line=118;
+                                                                                                $result="of";
                                                                                                 if (true) break $try;
                                                                                               }
                                                                                               else {
-                                                                                                $line=106;
-                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'f'))) {
-                                                                                                  $line=106;
-                                                                                                  $result="f";
+                                                                                                $line=121;
+                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'p'))) {
+                                                                                                  $line=121;
+                                                                                                  $result="p";
                                                                                                   if (true) break $try;
                                                                                                 }
                                                                                                 else {
-                                                                                                  $line=107;
-                                                                                                  if (($opEqualY(q,"f")&&$opEqualY(\u03C3,'a'))) {
-                                                                                                    $line=107;
-                                                                                                    $result="fa";
+                                                                                                  $line=122;
+                                                                                                  if (($opEqualY(q,"p")&&$opEqualY(\u03C3,'i'))) {
+                                                                                                    $line=122;
+                                                                                                    $result="pi";
                                                                                                     if (true) break $try;
                                                                                                   }
                                                                                                   else {
-                                                                                                    $line=108;
-                                                                                                    if (($opEqualY(q,"fa")&&$opEqualY(\u03C3,'c'))) {
-                                                                                                      $line=108;
-                                                                                                      $result="fac";
+                                                                                                    $line=123;
+                                                                                                    if (($opEqualY(q,"pi")&&$opEqualY(\u03C3,'c'))) {
+                                                                                                      $line=123;
+                                                                                                      $result="pic";
                                                                                                       if (true) break $try;
                                                                                                     }
                                                                                                     else {
-                                                                                                      $line=109;
-                                                                                                      if ($opEqualY(q,"face")) {
-                                                                                                        $line=109;
-                                                                                                        $result="Init";
+                                                                                                      $line=124;
+                                                                                                      if (($opEqualY(q,"pic")&&$opEqualY(\u03C3,'k'))) {
+                                                                                                        $line=124;
+                                                                                                        $result="pick";
                                                                                                         if (true) break $try;
                                                                                                       }
                                                                                                       else {
-                                                                                                        $line=111;
-                                                                                                        if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'p'))) {
-                                                                                                          $line=111;
-                                                                                                          $result="p";
+                                                                                                        $line=127;
+                                                                                                        if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'T'))) {
+                                                                                                          $line=127;
+                                                                                                          $result="T";
                                                                                                           if (true) break $try;
                                                                                                         }
                                                                                                         else {
-                                                                                                          $line=112;
-                                                                                                          if (($opEqualY(q,"p")&&$opEqualY(\u03C3,'u'))) {
-                                                                                                            $line=112;
-                                                                                                            $result="pu";
+                                                                                                          $line=128;
+                                                                                                          if (($opEqualY(q,"T")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                            $line=128;
+                                                                                                            $result="To";
                                                                                                             if (true) break $try;
                                                                                                           }
                                                                                                           else {
-                                                                                                            $line=113;
-                                                                                                            if (($opEqualY(q,"pu")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                              $line=113;
-                                                                                                              $result="put";
+                                                                                                            $line=129;
+                                                                                                            if (($opEqualY(q,"To")&&$opEqualY(\u03C3,'T'))) {
+                                                                                                              $line=129;
+                                                                                                              $result="ToT";
                                                                                                               if (true) break $try;
                                                                                                             }
                                                                                                             else {
-                                                                                                              $line=114;
-                                                                                                              if ($opEqualY(q,"put")) {
-                                                                                                                $line=114;
-                                                                                                                $result="Init";
+                                                                                                              $line=130;
+                                                                                                              if (($opEqualY(q,"ToT")&&$opEqualY(\u03C3,'h'))) {
+                                                                                                                $line=130;
+                                                                                                                $result="ToTh";
                                                                                                                 if (true) break $try;
                                                                                                               }
                                                                                                               else {
-                                                                                                                $line=116;
-                                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                  $line=116;
-                                                                                                                  $result="o";
+                                                                                                                $line=131;
+                                                                                                                if (($opEqualY(q,"ToTh")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                  $line=131;
+                                                                                                                  $result="ToThe";
                                                                                                                   if (true) break $try;
                                                                                                                 }
                                                                                                                 else {
-                                                                                                                  $line=117;
-                                                                                                                  if (($opEqualY(q,"o")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                    $line=117;
-                                                                                                                    $result="of";
+                                                                                                                  $line=134;
+                                                                                                                  if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'i'))) {
+                                                                                                                    $line=134;
+                                                                                                                    $result="i";
                                                                                                                     if (true) break $try;
                                                                                                                   }
                                                                                                                   else {
-                                                                                                                    $line=118;
-                                                                                                                    if ($opEqualY(q,"of")) {
-                                                                                                                      $line=118;
-                                                                                                                      $result="Init";
+                                                                                                                    $line=135;
+                                                                                                                    if (($opEqualY(q,"i")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                      $line=135;
+                                                                                                                      $result="in";
                                                                                                                       if (true) break $try;
                                                                                                                     }
                                                                                                                     else {
-                                                                                                                      $line=120;
-                                                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'p'))) {
-                                                                                                                        $line=120;
-                                                                                                                        $result="p";
+                                                                                                                      $line=136;
+                                                                                                                      if (($opEqualY(q,"in")&&$opEqualY(\u03C3,'D'))) {
+                                                                                                                        $line=136;
+                                                                                                                        $result="inD";
                                                                                                                         if (true) break $try;
                                                                                                                       }
                                                                                                                       else {
-                                                                                                                        $line=121;
-                                                                                                                        if (($opEqualY(q,"p")&&$opEqualY(\u03C3,'i'))) {
-                                                                                                                          $line=121;
-                                                                                                                          $result="pi";
+                                                                                                                        $line=137;
+                                                                                                                        if (($opEqualY(q,"inD")&&$opEqualY(\u03C3,'i'))) {
+                                                                                                                          $line=137;
+                                                                                                                          $result="inDir";
                                                                                                                           if (true) break $try;
                                                                                                                         }
                                                                                                                         else {
-                                                                                                                          $line=122;
-                                                                                                                          if (($opEqualY(q,"pi")&&$opEqualY(\u03C3,'c'))) {
-                                                                                                                            $line=122;
-                                                                                                                            $result="pic";
+                                                                                                                          $line=140;
+                                                                                                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'r'))) {
+                                                                                                                            $line=140;
+                                                                                                                            $result="r";
                                                                                                                             if (true) break $try;
                                                                                                                           }
                                                                                                                           else {
-                                                                                                                            $line=123;
-                                                                                                                            if (($opEqualY(q,"pic")&&$opEqualY(\u03C3,'k'))) {
-                                                                                                                              $line=123;
-                                                                                                                              $result="pick";
+                                                                                                                            $line=141;
+                                                                                                                            if (($opEqualY(q,"r")&&$opEqualY(\u03C3,'i'))) {
+                                                                                                                              $line=141;
+                                                                                                                              $result="ri";
                                                                                                                               if (true) break $try;
                                                                                                                             }
                                                                                                                             else {
-                                                                                                                              $line=124;
-                                                                                                                              if ($opEqualY(q,"pick")) {
-                                                                                                                                $line=124;
-                                                                                                                                $result="Init";
+                                                                                                                              $line=142;
+                                                                                                                              if (($opEqualY(q,"ri")&&$opEqualY(\u03C3,'g'))) {
+                                                                                                                                $line=142;
+                                                                                                                                $result="rig";
                                                                                                                                 if (true) break $try;
                                                                                                                               }
                                                                                                                               else {
-                                                                                                                                $line=126;
-                                                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'T'))) {
-                                                                                                                                  $line=126;
-                                                                                                                                  $result="T";
+                                                                                                                                $line=143;
+                                                                                                                                if (($opEqualY(q,"rig")&&$opEqualY(\u03C3,'h'))) {
+                                                                                                                                  $line=143;
+                                                                                                                                  $result="righ";
                                                                                                                                   if (true) break $try;
                                                                                                                                 }
                                                                                                                                 else {
-                                                                                                                                  $line=127;
-                                                                                                                                  if (($opEqualY(q,"T")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                                    $line=127;
-                                                                                                                                    $result="To";
+                                                                                                                                  $line=144;
+                                                                                                                                  if (($opEqualY(q,"righ")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                    $line=144;
+                                                                                                                                    $result="right";
                                                                                                                                     if (true) break $try;
                                                                                                                                   }
                                                                                                                                   else {
-                                                                                                                                    $line=128;
-                                                                                                                                    if (($opEqualY(q,"To")&&$opEqualY(\u03C3,'T'))) {
-                                                                                                                                      $line=128;
-                                                                                                                                      $result="ToT";
+                                                                                                                                    $line=147;
+                                                                                                                                    if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'l'))) {
+                                                                                                                                      $line=147;
+                                                                                                                                      $result="l";
                                                                                                                                       if (true) break $try;
                                                                                                                                     }
                                                                                                                                     else {
-                                                                                                                                      $line=129;
-                                                                                                                                      if (($opEqualY(q,"ToT")&&$opEqualY(\u03C3,'h'))) {
-                                                                                                                                        $line=129;
-                                                                                                                                        $result="ToTh";
+                                                                                                                                      $line=148;
+                                                                                                                                      if (($opEqualY(q,"l")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                        $line=148;
+                                                                                                                                        $result="le";
                                                                                                                                         if (true) break $try;
                                                                                                                                       }
                                                                                                                                       else {
-                                                                                                                                        $line=130;
-                                                                                                                                        if (($opEqualY(q,"ToTh")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                          $line=130;
-                                                                                                                                          $result="ToThe";
+                                                                                                                                        $line=149;
+                                                                                                                                        if (($opEqualY(q,"le")&&$opEqualY(\u03C3,'f'))) {
+                                                                                                                                          $line=149;
+                                                                                                                                          $result="lef";
                                                                                                                                           if (true) break $try;
                                                                                                                                         }
                                                                                                                                         else {
-                                                                                                                                          $line=131;
-                                                                                                                                          if ($opEqualY(q,"ToThe")) {
-                                                                                                                                            $line=131;
-                                                                                                                                            $result="Init";
+                                                                                                                                          $line=150;
+                                                                                                                                          if (($opEqualY(q,"lef")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                            $line=150;
+                                                                                                                                            $result="left";
                                                                                                                                             if (true) break $try;
                                                                                                                                           }
                                                                                                                                           else {
-                                                                                                                                            $line=133;
-                                                                                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'i'))) {
-                                                                                                                                              $line=133;
-                                                                                                                                              $result="i";
+                                                                                                                                            $line=153;
+                                                                                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'b'))) {
+                                                                                                                                              $line=153;
+                                                                                                                                              $result="b";
                                                                                                                                               if (true) break $try;
                                                                                                                                             }
                                                                                                                                             else {
-                                                                                                                                              $line=134;
-                                                                                                                                              if (($opEqualY(q,"i")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                $line=134;
-                                                                                                                                                $result="in";
+                                                                                                                                              $line=154;
+                                                                                                                                              if (($opEqualY(q,"b")&&$opEqualY(\u03C3,'a'))) {
+                                                                                                                                                $line=154;
+                                                                                                                                                $result="ba";
                                                                                                                                                 if (true) break $try;
                                                                                                                                               }
                                                                                                                                               else {
-                                                                                                                                                $line=135;
-                                                                                                                                                if (($opEqualY(q,"in")&&$opEqualY(\u03C3,'D'))) {
-                                                                                                                                                  $line=135;
-                                                                                                                                                  $result="inD";
+                                                                                                                                                $line=155;
+                                                                                                                                                if (($opEqualY(q,"ba")&&$opEqualY(\u03C3,'c'))) {
+                                                                                                                                                  $line=155;
+                                                                                                                                                  $result="bac";
                                                                                                                                                   if (true) break $try;
                                                                                                                                                 }
                                                                                                                                                 else {
-                                                                                                                                                  $line=136;
-                                                                                                                                                  if (($opEqualY(q,"inD")&&$opEqualY(\u03C3,'i'))) {
-                                                                                                                                                    $line=136;
-                                                                                                                                                    $result="inDir";
+                                                                                                                                                  $line=156;
+                                                                                                                                                  if (($opEqualY(q,"bac")&&$opEqualY(\u03C3,'k'))) {
+                                                                                                                                                    $line=156;
+                                                                                                                                                    $result="back";
                                                                                                                                                     if (true) break $try;
                                                                                                                                                   }
                                                                                                                                                   else {
-                                                                                                                                                    $line=137;
-                                                                                                                                                    if ($opEqualY(q,"inDir")) {
-                                                                                                                                                      $line=137;
-                                                                                                                                                      $result="Init";
+                                                                                                                                                    $line=159;
+                                                                                                                                                    if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'f'))) {
+                                                                                                                                                      $line=159;
+                                                                                                                                                      $result="f";
                                                                                                                                                       if (true) break $try;
                                                                                                                                                     }
                                                                                                                                                     else {
-                                                                                                                                                      $line=139;
-                                                                                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'r'))) {
-                                                                                                                                                        $line=139;
-                                                                                                                                                        $result="r";
+                                                                                                                                                      $line=160;
+                                                                                                                                                      if (($opEqualY(q,"f")&&$opEqualY(\u03C3,'r'))) {
+                                                                                                                                                        $line=160;
+                                                                                                                                                        $result="fr";
                                                                                                                                                         if (true) break $try;
                                                                                                                                                       }
                                                                                                                                                       else {
-                                                                                                                                                        $line=140;
-                                                                                                                                                        if (($opEqualY(q,"r")&&$opEqualY(\u03C3,'i'))) {
-                                                                                                                                                          $line=140;
-                                                                                                                                                          $result="ri";
+                                                                                                                                                        $line=161;
+                                                                                                                                                        if (($opEqualY(q,"fr")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                                                                          $line=161;
+                                                                                                                                                          $result="fro";
                                                                                                                                                           if (true) break $try;
                                                                                                                                                         }
                                                                                                                                                         else {
-                                                                                                                                                          $line=141;
-                                                                                                                                                          if (($opEqualY(q,"ri")&&$opEqualY(\u03C3,'g'))) {
-                                                                                                                                                            $line=141;
-                                                                                                                                                            $result="rig";
+                                                                                                                                                          $line=162;
+                                                                                                                                                          if (($opEqualY(q,"fro")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                                                            $line=162;
+                                                                                                                                                            $result="front";
                                                                                                                                                             if (true) break $try;
                                                                                                                                                           }
                                                                                                                                                           else {
-                                                                                                                                                            $line=142;
-                                                                                                                                                            if (($opEqualY(q,"rig")&&$opEqualY(\u03C3,'h'))) {
-                                                                                                                                                              $line=142;
-                                                                                                                                                              $result="righ";
+                                                                                                                                                            $line=165;
+                                                                                                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'i'))) {
+                                                                                                                                                              $line=165;
+                                                                                                                                                              $result="i";
                                                                                                                                                               if (true) break $try;
                                                                                                                                                             }
                                                                                                                                                             else {
-                                                                                                                                                              $line=143;
-                                                                                                                                                              if (($opEqualY(q,"rig")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                $line=143;
-                                                                                                                                                                $result="right";
+                                                                                                                                                              $line=166;
+                                                                                                                                                              if (($opEqualY(q,"i")&&$opEqualY(\u03C3,'f'))) {
+                                                                                                                                                                $line=166;
+                                                                                                                                                                $result="if";
                                                                                                                                                                 if (true) break $try;
                                                                                                                                                               }
                                                                                                                                                               else {
-                                                                                                                                                                $line=144;
-                                                                                                                                                                if ($opEqualY(q,"right")) {
-                                                                                                                                                                  $line=144;
-                                                                                                                                                                  $result="Init";
+                                                                                                                                                                $line=169;
+                                                                                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                  $line=169;
+                                                                                                                                                                  $result="t";
                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                 }
                                                                                                                                                                 else {
-                                                                                                                                                                  $line=146;
-                                                                                                                                                                  if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'l'))) {
-                                                                                                                                                                    $line=146;
-                                                                                                                                                                    $result="l";
+                                                                                                                                                                  $line=170;
+                                                                                                                                                                  if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'h'))) {
+                                                                                                                                                                    $line=170;
+                                                                                                                                                                    $result="th";
                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                   }
                                                                                                                                                                   else {
-                                                                                                                                                                    $line=147;
-                                                                                                                                                                    if (($opEqualY(q,"l")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                      $line=147;
-                                                                                                                                                                      $result="le";
+                                                                                                                                                                    $line=171;
+                                                                                                                                                                    if (($opEqualY(q,"th")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                      $line=171;
+                                                                                                                                                                      $result="the";
                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                     }
                                                                                                                                                                     else {
-                                                                                                                                                                      $line=148;
-                                                                                                                                                                      if (($opEqualY(q,"le")&&$opEqualY(\u03C3,'f'))) {
-                                                                                                                                                                        $line=148;
-                                                                                                                                                                        $result="lef";
+                                                                                                                                                                      $line=172;
+                                                                                                                                                                      if (($opEqualY(q,"the")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                                                                        $line=172;
+                                                                                                                                                                        $result="then";
                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                       }
                                                                                                                                                                       else {
-                                                                                                                                                                        $line=149;
-                                                                                                                                                                        if (($opEqualY(q,"lef")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                          $line=149;
-                                                                                                                                                                          $result="left";
+                                                                                                                                                                        $line=175;
+                                                                                                                                                                        if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                          $line=175;
+                                                                                                                                                                          $result="e";
                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                         }
                                                                                                                                                                         else {
-                                                                                                                                                                          $line=150;
-                                                                                                                                                                          if ($opEqualY(q,"left")) {
-                                                                                                                                                                            $line=150;
-                                                                                                                                                                            $result="Init";
+                                                                                                                                                                          $line=176;
+                                                                                                                                                                          if (($opEqualY(q,"e")&&$opEqualY(\u03C3,'l'))) {
+                                                                                                                                                                            $line=176;
+                                                                                                                                                                            $result="el";
                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                           }
                                                                                                                                                                           else {
-                                                                                                                                                                            $line=152;
-                                                                                                                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'b'))) {
-                                                                                                                                                                              $line=152;
-                                                                                                                                                                              $result="b";
+                                                                                                                                                                            $line=177;
+                                                                                                                                                                            if (($opEqualY(q,"el")&&$opEqualY(\u03C3,'s'))) {
+                                                                                                                                                                              $line=177;
+                                                                                                                                                                              $result="els";
                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                             }
                                                                                                                                                                             else {
-                                                                                                                                                                              $line=153;
-                                                                                                                                                                              if (($opEqualY(q,"b")&&$opEqualY(\u03C3,'a'))) {
-                                                                                                                                                                                $line=153;
-                                                                                                                                                                                $result="ba";
+                                                                                                                                                                              $line=178;
+                                                                                                                                                                              if (($opEqualY(q,"els")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                $line=178;
+                                                                                                                                                                                $result="else";
                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                               }
                                                                                                                                                                               else {
-                                                                                                                                                                                $line=154;
-                                                                                                                                                                                if (($opEqualY(q,"ba")&&$opEqualY(\u03C3,'c'))) {
-                                                                                                                                                                                  $line=154;
-                                                                                                                                                                                  $result="bac";
+                                                                                                                                                                                $line=181;
+                                                                                                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'w'))) {
+                                                                                                                                                                                  $line=181;
+                                                                                                                                                                                  $result="w";
                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                 }
                                                                                                                                                                                 else {
-                                                                                                                                                                                  $line=155;
-                                                                                                                                                                                  if (($opEqualY(q,"bac")&&$opEqualY(\u03C3,'k'))) {
-                                                                                                                                                                                    $line=155;
-                                                                                                                                                                                    $result="back";
+                                                                                                                                                                                  $line=182;
+                                                                                                                                                                                  if (($opEqualY(q,"w")&&$opEqualY(\u03C3,'h'))) {
+                                                                                                                                                                                    $line=182;
+                                                                                                                                                                                    $result="wh";
                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                   }
                                                                                                                                                                                   else {
-                                                                                                                                                                                    $line=156;
-                                                                                                                                                                                    if ($opEqualY(q,"back")) {
-                                                                                                                                                                                      $line=156;
-                                                                                                                                                                                      $result="Init";
+                                                                                                                                                                                    $line=183;
+                                                                                                                                                                                    if (($opEqualY(q,"wh")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                      $line=183;
+                                                                                                                                                                                      $result="whi";
                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                     }
                                                                                                                                                                                     else {
-                                                                                                                                                                                      $line=158;
-                                                                                                                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'f'))) {
-                                                                                                                                                                                        $line=158;
-                                                                                                                                                                                        $result="f";
+                                                                                                                                                                                      $line=184;
+                                                                                                                                                                                      if (($opEqualY(q,"whi")&&$opEqualY(\u03C3,'l'))) {
+                                                                                                                                                                                        $line=184;
+                                                                                                                                                                                        $result="whil";
                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                       }
                                                                                                                                                                                       else {
-                                                                                                                                                                                        $line=159;
-                                                                                                                                                                                        if (($opEqualY(q,"f")&&$opEqualY(\u03C3,'r'))) {
-                                                                                                                                                                                          $line=159;
-                                                                                                                                                                                          $result="fr";
+                                                                                                                                                                                        $line=185;
+                                                                                                                                                                                        if (($opEqualY(q,"whil")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                          $line=185;
+                                                                                                                                                                                          $result="while";
                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                         }
                                                                                                                                                                                         else {
-                                                                                                                                                                                          $line=160;
-                                                                                                                                                                                          if (($opEqualY(q,"fr")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                                                                                            $line=160;
-                                                                                                                                                                                            $result="fro";
+                                                                                                                                                                                          $line=188;
+                                                                                                                                                                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'d'))) {
+                                                                                                                                                                                            $line=188;
+                                                                                                                                                                                            $result="d";
                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                           }
                                                                                                                                                                                           else {
-                                                                                                                                                                                            $line=161;
-                                                                                                                                                                                            if (($opEqualY(q,"fro")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                                                              $line=161;
-                                                                                                                                                                                              $result="front";
+                                                                                                                                                                                            $line=189;
+                                                                                                                                                                                            if (($opEqualY(q,"d")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                                                                                                              $line=189;
+                                                                                                                                                                                              $result="do";
                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                             }
                                                                                                                                                                                             else {
-                                                                                                                                                                                              $line=162;
-                                                                                                                                                                                              if ($opEqualY(q,"front")) {
-                                                                                                                                                                                                $line=162;
-                                                                                                                                                                                                $result="Init";
+                                                                                                                                                                                              $line=192;
+                                                                                                                                                                                              if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'r'))) {
+                                                                                                                                                                                                $line=192;
+                                                                                                                                                                                                $result="r";
                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                               }
                                                                                                                                                                                               else {
-                                                                                                                                                                                                $line=164;
-                                                                                                                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'i'))) {
-                                                                                                                                                                                                  $line=164;
-                                                                                                                                                                                                  $result="i";
+                                                                                                                                                                                                $line=193;
+                                                                                                                                                                                                if (($opEqualY(q,"r")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                                  $line=193;
+                                                                                                                                                                                                  $result="re";
                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                 }
                                                                                                                                                                                                 else {
-                                                                                                                                                                                                  $line=165;
-                                                                                                                                                                                                  if (($opEqualY(q,"i")&&$opEqualY(\u03C3,'f'))) {
-                                                                                                                                                                                                    $line=165;
-                                                                                                                                                                                                    $result="if";
+                                                                                                                                                                                                  $line=194;
+                                                                                                                                                                                                  if (($opEqualY(q,"re")&&$opEqualY(\u03C3,'p'))) {
+                                                                                                                                                                                                    $line=194;
+                                                                                                                                                                                                    $result="rep";
                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                   }
                                                                                                                                                                                                   else {
-                                                                                                                                                                                                    $line=166;
-                                                                                                                                                                                                    if ($opEqualY(q,"if")) {
-                                                                                                                                                                                                      $line=166;
-                                                                                                                                                                                                      $result="Init";
+                                                                                                                                                                                                    $line=195;
+                                                                                                                                                                                                    if (($opEqualY(q,"rep")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                                      $line=195;
+                                                                                                                                                                                                      $result="repe";
                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                     }
                                                                                                                                                                                                     else {
-                                                                                                                                                                                                      $line=168;
-                                                                                                                                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                        $line=168;
-                                                                                                                                                                                                        $result="t";
+                                                                                                                                                                                                      $line=196;
+                                                                                                                                                                                                      if (($opEqualY(q,"repe")&&$opEqualY(\u03C3,'a'))) {
+                                                                                                                                                                                                        $line=196;
+                                                                                                                                                                                                        $result="repea";
                                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                                       }
                                                                                                                                                                                                       else {
-                                                                                                                                                                                                        $line=169;
-                                                                                                                                                                                                        if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'h'))) {
-                                                                                                                                                                                                          $line=169;
-                                                                                                                                                                                                          $result="th";
+                                                                                                                                                                                                        $line=197;
+                                                                                                                                                                                                        if (($opEqualY(q,"repea")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                                                          $line=197;
+                                                                                                                                                                                                          $result="repeat";
                                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                                         }
                                                                                                                                                                                                         else {
-                                                                                                                                                                                                          $line=170;
-                                                                                                                                                                                                          if (($opEqualY(q,"th")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                            $line=170;
-                                                                                                                                                                                                            $result="the";
+                                                                                                                                                                                                          $line=200;
+                                                                                                                                                                                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                                                            $line=200;
+                                                                                                                                                                                                            $result="t";
                                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                                           }
                                                                                                                                                                                                           else {
-                                                                                                                                                                                                            $line=171;
-                                                                                                                                                                                                            if (($opEqualY(q,"the")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                                                                              $line=171;
-                                                                                                                                                                                                              $result="then";
+                                                                                                                                                                                                            $line=201;
+                                                                                                                                                                                                            if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'i'))) {
+                                                                                                                                                                                                              $line=201;
+                                                                                                                                                                                                              $result="ti";
                                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                                             }
                                                                                                                                                                                                             else {
-                                                                                                                                                                                                              $line=172;
-                                                                                                                                                                                                              if ($opEqualY(q,"then")) {
-                                                                                                                                                                                                                $line=172;
-                                                                                                                                                                                                                $result="Init";
+                                                                                                                                                                                                              $line=202;
+                                                                                                                                                                                                              if (($opEqualY(q,"ti")&&$opEqualY(\u03C3,'m'))) {
+                                                                                                                                                                                                                $line=202;
+                                                                                                                                                                                                                $result="tim";
                                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                                               }
                                                                                                                                                                                                               else {
-                                                                                                                                                                                                                $line=174;
-                                                                                                                                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                  $line=174;
-                                                                                                                                                                                                                  $result="e";
+                                                                                                                                                                                                                $line=203;
+                                                                                                                                                                                                                if (($opEqualY(q,"tim")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                                                  $line=203;
+                                                                                                                                                                                                                  $result="time";
                                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                                 }
                                                                                                                                                                                                                 else {
-                                                                                                                                                                                                                  $line=175;
-                                                                                                                                                                                                                  if (($opEqualY(q,"e")&&$opEqualY(\u03C3,'l'))) {
-                                                                                                                                                                                                                    $line=175;
-                                                                                                                                                                                                                    $result="el";
+                                                                                                                                                                                                                  $line=204;
+                                                                                                                                                                                                                  if (($opEqualY(q,"time")&&$opEqualY(\u03C3,'s'))) {
+                                                                                                                                                                                                                    $line=204;
+                                                                                                                                                                                                                    $result="times";
                                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                                   }
                                                                                                                                                                                                                   else {
-                                                                                                                                                                                                                    $line=176;
-                                                                                                                                                                                                                    if (($opEqualY(q,"el")&&$opEqualY(\u03C3,'s'))) {
-                                                                                                                                                                                                                      $line=176;
-                                                                                                                                                                                                                      $result="els";
+                                                                                                                                                                                                                    $line=207;
+                                                                                                                                                                                                                    if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'f'))) {
+                                                                                                                                                                                                                      $line=207;
+                                                                                                                                                                                                                      $result="f";
                                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                                     }
                                                                                                                                                                                                                     else {
-                                                                                                                                                                                                                      $line=177;
-                                                                                                                                                                                                                      if (($opEqualY(q,"els")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                        $line=177;
-                                                                                                                                                                                                                        $result="else";
+                                                                                                                                                                                                                      $line=208;
+                                                                                                                                                                                                                      if (($opEqualY(q,"f")&&$opEqualY(\u03C3,'a'))) {
+                                                                                                                                                                                                                        $line=208;
+                                                                                                                                                                                                                        $result="fa";
                                                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                                                       }
                                                                                                                                                                                                                       else {
-                                                                                                                                                                                                                        $line=178;
-                                                                                                                                                                                                                        if ($opEqualY(q,"else")) {
-                                                                                                                                                                                                                          $line=178;
-                                                                                                                                                                                                                          $result="Init";
+                                                                                                                                                                                                                        $line=209;
+                                                                                                                                                                                                                        if (($opEqualY(q,"fa")&&$opEqualY(\u03C3,'c'))) {
+                                                                                                                                                                                                                          $line=209;
+                                                                                                                                                                                                                          $result="fac";
                                                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                                                         }
                                                                                                                                                                                                                         else {
-                                                                                                                                                                                                                          $line=180;
-                                                                                                                                                                                                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'w'))) {
-                                                                                                                                                                                                                            $line=180;
-                                                                                                                                                                                                                            $result="w";
+                                                                                                                                                                                                                          $line=210;
+                                                                                                                                                                                                                          if (($opEqualY(q,"fac")&&$opEqualY(\u03C3,'i'))) {
+                                                                                                                                                                                                                            $line=210;
+                                                                                                                                                                                                                            $result="faci";
                                                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                                                           }
                                                                                                                                                                                                                           else {
-                                                                                                                                                                                                                            $line=181;
-                                                                                                                                                                                                                            if (($opEqualY(q,"w")&&$opEqualY(\u03C3,'h'))) {
-                                                                                                                                                                                                                              $line=181;
-                                                                                                                                                                                                                              $result="wh";
+                                                                                                                                                                                                                            $line=211;
+                                                                                                                                                                                                                            if (($opEqualY(q,"faci")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                                                                                                                              $line=211;
+                                                                                                                                                                                                                              $result="facin";
                                                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                             else {
-                                                                                                                                                                                                                              $line=182;
-                                                                                                                                                                                                                              if (($opEqualY(q,"wh")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                                $line=182;
-                                                                                                                                                                                                                                $result="whi";
+                                                                                                                                                                                                                              $line=212;
+                                                                                                                                                                                                                              if (($opEqualY(q,"facin")&&$opEqualY(\u03C3,'g'))) {
+                                                                                                                                                                                                                                $line=212;
+                                                                                                                                                                                                                                $result="facing";
                                                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                                                               }
                                                                                                                                                                                                                               else {
-                                                                                                                                                                                                                                $line=183;
-                                                                                                                                                                                                                                if (($opEqualY(q,"whi")&&$opEqualY(\u03C3,'l'))) {
-                                                                                                                                                                                                                                  $line=183;
-                                                                                                                                                                                                                                  $result="whil";
+                                                                                                                                                                                                                                $line=215;
+                                                                                                                                                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'c'))) {
+                                                                                                                                                                                                                                  $line=215;
+                                                                                                                                                                                                                                  $result="c";
                                                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                 else {
-                                                                                                                                                                                                                                  $line=184;
-                                                                                                                                                                                                                                  if (($opEqualY(q,"whil")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                                    $line=184;
-                                                                                                                                                                                                                                    $result="while";
+                                                                                                                                                                                                                                  $line=216;
+                                                                                                                                                                                                                                  if (($opEqualY(q,"c")&&$opEqualY(\u03C3,'a'))) {
+                                                                                                                                                                                                                                    $line=216;
+                                                                                                                                                                                                                                    $result="ca";
                                                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                   else {
-                                                                                                                                                                                                                                    $line=185;
-                                                                                                                                                                                                                                    if ($opEqualY(q,"while")) {
-                                                                                                                                                                                                                                      $line=185;
-                                                                                                                                                                                                                                      $result="Init";
+                                                                                                                                                                                                                                    $line=217;
+                                                                                                                                                                                                                                    if (($opEqualY(q,"ca")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                                                                                                                                      $line=217;
+                                                                                                                                                                                                                                      $result="can";
                                                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                     else {
-                                                                                                                                                                                                                                      $line=187;
-                                                                                                                                                                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'d'))) {
-                                                                                                                                                                                                                                        $line=187;
-                                                                                                                                                                                                                                        $result="d";
+                                                                                                                                                                                                                                      $line=218;
+                                                                                                                                                                                                                                      if (($opEqualY(q,"can")&&$opEqualY(\u03C3,'P'))) {
+                                                                                                                                                                                                                                        $line=218;
+                                                                                                                                                                                                                                        $result="canP";
                                                                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                       else {
-                                                                                                                                                                                                                                        $line=188;
-                                                                                                                                                                                                                                        if (($opEqualY(q,"d")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                                                                                                                                          $line=188;
-                                                                                                                                                                                                                                          $result="do";
+                                                                                                                                                                                                                                        $line=219;
+                                                                                                                                                                                                                                        if (($opEqualY(q,"canP")&&$opEqualY(\u03C3,'u'))) {
+                                                                                                                                                                                                                                          $line=219;
+                                                                                                                                                                                                                                          $result="canPu";
                                                                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                         else {
-                                                                                                                                                                                                                                          $line=189;
-                                                                                                                                                                                                                                          if ($opEqualY(q,"do")) {
-                                                                                                                                                                                                                                            $line=189;
-                                                                                                                                                                                                                                            $result="Init";
+                                                                                                                                                                                                                                          $line=220;
+                                                                                                                                                                                                                                          if (($opEqualY(q,"canPu")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                                                                                            $line=220;
+                                                                                                                                                                                                                                            $result="canPut";
                                                                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                           else {
-                                                                                                                                                                                                                                            $line=191;
-                                                                                                                                                                                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'r'))) {
-                                                                                                                                                                                                                                              $line=191;
-                                                                                                                                                                                                                                              $result="r";
+                                                                                                                                                                                                                                            $line=223;
+                                                                                                                                                                                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'c'))) {
+                                                                                                                                                                                                                                              $line=223;
+                                                                                                                                                                                                                                              $result="c";
                                                                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                             else {
-                                                                                                                                                                                                                                              $line=192;
-                                                                                                                                                                                                                                              if (($opEqualY(q,"r")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                                                $line=192;
-                                                                                                                                                                                                                                                $result="re";
+                                                                                                                                                                                                                                              $line=224;
+                                                                                                                                                                                                                                              if (($opEqualY(q,"c")&&$opEqualY(\u03C3,'a'))) {
+                                                                                                                                                                                                                                                $line=224;
+                                                                                                                                                                                                                                                $result="ca";
                                                                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                               else {
-                                                                                                                                                                                                                                                $line=193;
-                                                                                                                                                                                                                                                if (($opEqualY(q,"re")&&$opEqualY(\u03C3,'p'))) {
-                                                                                                                                                                                                                                                  $line=193;
-                                                                                                                                                                                                                                                  $result="rep";
+                                                                                                                                                                                                                                                $line=225;
+                                                                                                                                                                                                                                                if (($opEqualY(q,"ca")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                                                                                                                                                  $line=225;
+                                                                                                                                                                                                                                                  $result="can";
                                                                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                 else {
-                                                                                                                                                                                                                                                  $line=194;
-                                                                                                                                                                                                                                                  if (($opEqualY(q,"rep")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                                                    $line=194;
-                                                                                                                                                                                                                                                    $result="repe";
+                                                                                                                                                                                                                                                  $line=226;
+                                                                                                                                                                                                                                                  if (($opEqualY(q,"can")&&$opEqualY(\u03C3,'M'))) {
+                                                                                                                                                                                                                                                    $line=226;
+                                                                                                                                                                                                                                                    $result="canM";
                                                                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                   else {
-                                                                                                                                                                                                                                                    $line=195;
-                                                                                                                                                                                                                                                    if (($opEqualY(q,"repe")&&$opEqualY(\u03C3,'a'))) {
-                                                                                                                                                                                                                                                      $line=195;
-                                                                                                                                                                                                                                                      $result="repea";
+                                                                                                                                                                                                                                                    $line=227;
+                                                                                                                                                                                                                                                    if (($opEqualY(q,"canM")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                                                                                                                                                                      $line=227;
+                                                                                                                                                                                                                                                      $result="canMo";
                                                                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                     else {
-                                                                                                                                                                                                                                                      $line=196;
-                                                                                                                                                                                                                                                      if (($opEqualY(q,"repea")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                                                                        $line=196;
-                                                                                                                                                                                                                                                        $result="repeat";
+                                                                                                                                                                                                                                                      $line=228;
+                                                                                                                                                                                                                                                      if (($opEqualY(q,"canMo")&&$opEqualY(\u03C3,'v'))) {
+                                                                                                                                                                                                                                                        $line=228;
+                                                                                                                                                                                                                                                        $result="canMov";
                                                                                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                       else {
-                                                                                                                                                                                                                                                        $line=197;
-                                                                                                                                                                                                                                                        if ($opEqualY(q,"repeat")) {
-                                                                                                                                                                                                                                                          $line=197;
-                                                                                                                                                                                                                                                          $result="Init";
+                                                                                                                                                                                                                                                        $line=229;
+                                                                                                                                                                                                                                                        if (($opEqualY(q,"canMov")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                                                                                          $line=229;
+                                                                                                                                                                                                                                                          $result="canMove";
                                                                                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                         else {
-                                                                                                                                                                                                                                                          $line=199;
-                                                                                                                                                                                                                                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                                                                            $line=199;
-                                                                                                                                                                                                                                                            $result="t";
+                                                                                                                                                                                                                                                          $line=232;
+                                                                                                                                                                                                                                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                                                                                                                                                            $line=232;
+                                                                                                                                                                                                                                                            $result="n";
                                                                                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                           else {
-                                                                                                                                                                                                                                                            $line=200;
-                                                                                                                                                                                                                                                            if (($opEqualY(q,"t")&&$opEqualY(\u03C3,'i'))) {
-                                                                                                                                                                                                                                                              $line=200;
-                                                                                                                                                                                                                                                              $result="ti";
+                                                                                                                                                                                                                                                            $line=233;
+                                                                                                                                                                                                                                                            if (($opEqualY(q,"n")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                                                                                                                                                                              $line=233;
+                                                                                                                                                                                                                                                              $result="no";
                                                                                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                             else {
-                                                                                                                                                                                                                                                              $line=201;
-                                                                                                                                                                                                                                                              if (($opEqualY(q,"ti")&&$opEqualY(\u03C3,'m'))) {
-                                                                                                                                                                                                                                                                $line=201;
-                                                                                                                                                                                                                                                                $result="tim";
+                                                                                                                                                                                                                                                              $line=234;
+                                                                                                                                                                                                                                                              if (($opEqualY(q,"no")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                                                                                                                $line=234;
+                                                                                                                                                                                                                                                                $result="not";
                                                                                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                                               else {
-                                                                                                                                                                                                                                                                $line=202;
-                                                                                                                                                                                                                                                                if (($opEqualY(q,"tim")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                                                                  $line=202;
-                                                                                                                                                                                                                                                                  $result="time";
+                                                                                                                                                                                                                                                                $line=237;
+                                                                                                                                                                                                                                                                if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'C'))) {
+                                                                                                                                                                                                                                                                  $line=237;
+                                                                                                                                                                                                                                                                  $result="C";
                                                                                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                 else {
-                                                                                                                                                                                                                                                                  $line=203;
-                                                                                                                                                                                                                                                                  if (($opEqualY(q,"time")&&$opEqualY(\u03C3,'s'))) {
-                                                                                                                                                                                                                                                                    $line=203;
-                                                                                                                                                                                                                                                                    $result="times";
+                                                                                                                                                                                                                                                                  $line=238;
+                                                                                                                                                                                                                                                                  if (($opEqualY(q,"C")&&$opEqualY(\u03C3,'h'))) {
+                                                                                                                                                                                                                                                                    $line=238;
+                                                                                                                                                                                                                                                                    $result="Ch";
                                                                                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                   else {
-                                                                                                                                                                                                                                                                    $line=204;
-                                                                                                                                                                                                                                                                    if ($opEqualY(q,"times")) {
-                                                                                                                                                                                                                                                                      $line=204;
-                                                                                                                                                                                                                                                                      $result="Init";
+                                                                                                                                                                                                                                                                    $line=239;
+                                                                                                                                                                                                                                                                    if (($opEqualY(q,"Ch")&&$opEqualY(\u03C3,'i'))) {
+                                                                                                                                                                                                                                                                      $line=239;
+                                                                                                                                                                                                                                                                      $result="Chi";
                                                                                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                     else {
-                                                                                                                                                                                                                                                                      $line=206;
-                                                                                                                                                                                                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'f'))) {
-                                                                                                                                                                                                                                                                        $line=206;
-                                                                                                                                                                                                                                                                        $result="f";
+                                                                                                                                                                                                                                                                      $line=240;
+                                                                                                                                                                                                                                                                      if (($opEqualY(q,"Chip")&&$opEqualY(\u03C3,'p'))) {
+                                                                                                                                                                                                                                                                        $line=240;
+                                                                                                                                                                                                                                                                        $result="Chip";
                                                                                                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                                       else {
-                                                                                                                                                                                                                                                                        $line=207;
-                                                                                                                                                                                                                                                                        if (($opEqualY(q,"f")&&$opEqualY(\u03C3,'a'))) {
-                                                                                                                                                                                                                                                                          $line=207;
-                                                                                                                                                                                                                                                                          $result="fa";
+                                                                                                                                                                                                                                                                        $line=241;
+                                                                                                                                                                                                                                                                        if (($opEqualY(q,"Chip")&&$opEqualY(\u03C3,'s'))) {
+                                                                                                                                                                                                                                                                          $line=241;
+                                                                                                                                                                                                                                                                          $result="Chips";
                                                                                                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                         else {
-                                                                                                                                                                                                                                                                          $line=208;
-                                                                                                                                                                                                                                                                          if (($opEqualY(q,"fa")&&$opEqualY(\u03C3,'c'))) {
-                                                                                                                                                                                                                                                                            $line=208;
-                                                                                                                                                                                                                                                                            $result="fac";
+                                                                                                                                                                                                                                                                          $line=244;
+                                                                                                                                                                                                                                                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'B'))) {
+                                                                                                                                                                                                                                                                            $line=244;
+                                                                                                                                                                                                                                                                            $result="B";
                                                                                                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                                           else {
-                                                                                                                                                                                                                                                                            $line=209;
-                                                                                                                                                                                                                                                                            if (($opEqualY(q,"fac")&&$opEqualY(\u03C3,'i'))) {
-                                                                                                                                                                                                                                                                              $line=209;
-                                                                                                                                                                                                                                                                              $result="faci";
+                                                                                                                                                                                                                                                                            $line=245;
+                                                                                                                                                                                                                                                                            if (($opEqualY(q,"B")&&$opEqualY(\u03C3,'a'))) {
+                                                                                                                                                                                                                                                                              $line=245;
+                                                                                                                                                                                                                                                                              $result="Ba";
                                                                                                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                             else {
-                                                                                                                                                                                                                                                                              $line=210;
-                                                                                                                                                                                                                                                                              if (($opEqualY(q,"faci")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                                                                                                                                                $line=210;
-                                                                                                                                                                                                                                                                                $result="facin";
+                                                                                                                                                                                                                                                                              $line=246;
+                                                                                                                                                                                                                                                                              if (($opEqualY(q,"Ba")&&$opEqualY(\u03C3,'l'))) {
+                                                                                                                                                                                                                                                                                $line=246;
+                                                                                                                                                                                                                                                                                $result="Bal";
                                                                                                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                                                               else {
-                                                                                                                                                                                                                                                                                $line=211;
-                                                                                                                                                                                                                                                                                if (($opEqualY(q,"facin")&&$opEqualY(\u03C3,'g'))) {
-                                                                                                                                                                                                                                                                                  $line=211;
-                                                                                                                                                                                                                                                                                  $result="facing";
+                                                                                                                                                                                                                                                                                $line=247;
+                                                                                                                                                                                                                                                                                if (($opEqualY(q,"Bal")&&$opEqualY(\u03C3,'l'))) {
+                                                                                                                                                                                                                                                                                  $line=247;
+                                                                                                                                                                                                                                                                                  $result="Ball";
                                                                                                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                                 else {
-                                                                                                                                                                                                                                                                                  $line=212;
-                                                                                                                                                                                                                                                                                  if ($opEqualY(q,"facing")) {
-                                                                                                                                                                                                                                                                                    $line=212;
-                                                                                                                                                                                                                                                                                    $result="Init";
+                                                                                                                                                                                                                                                                                  $line=248;
+                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Ball")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                                                                                                                                                                                                    $line=248;
+                                                                                                                                                                                                                                                                                    $result="Ballo";
                                                                                                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                                   else {
-                                                                                                                                                                                                                                                                                    $line=214;
-                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'c'))) {
-                                                                                                                                                                                                                                                                                      $line=214;
-                                                                                                                                                                                                                                                                                      $result="c";
+                                                                                                                                                                                                                                                                                    $line=249;
+                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"Ballo")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                                                                                                                                                                                      $line=249;
+                                                                                                                                                                                                                                                                                      $result="Ballon";
                                                                                                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                                     else {
-                                                                                                                                                                                                                                                                                      $line=215;
-                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"c")&&$opEqualY(\u03C3,'a'))) {
-                                                                                                                                                                                                                                                                                        $line=215;
-                                                                                                                                                                                                                                                                                        $result="ca";
+                                                                                                                                                                                                                                                                                      $line=250;
+                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"Ballon")&&$opEqualY(\u03C3,'s'))) {
+                                                                                                                                                                                                                                                                                        $line=250;
+                                                                                                                                                                                                                                                                                        $result="Ballons";
                                                                                                                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                                                       else {
-                                                                                                                                                                                                                                                                                        $line=216;
-                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"ca")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                                                                                                                                                          $line=216;
-                                                                                                                                                                                                                                                                                          $result="can";
+                                                                                                                                                                                                                                                                                        $line=253;
+                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'n'))) {
+                                                                                                                                                                                                                                                                                          $line=253;
+                                                                                                                                                                                                                                                                                          $result="n";
                                                                                                                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                                         else {
-                                                                                                                                                                                                                                                                                          $line=217;
-                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"can")&&$opEqualY(\u03C3,'P'))) {
-                                                                                                                                                                                                                                                                                            $line=217;
-                                                                                                                                                                                                                                                                                            $result="canP";
+                                                                                                                                                                                                                                                                                          $line=254;
+                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"n")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                                                                                                                                                                                                            $line=254;
+                                                                                                                                                                                                                                                                                            $result="no";
                                                                                                                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                                                           else {
-                                                                                                                                                                                                                                                                                            $line=218;
-                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"canP")&&$opEqualY(\u03C3,'u'))) {
-                                                                                                                                                                                                                                                                                              $line=218;
-                                                                                                                                                                                                                                                                                              $result="canPu";
+                                                                                                                                                                                                                                                                                            $line=255;
+                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"no")&&$opEqualY(\u03C3,'r'))) {
+                                                                                                                                                                                                                                                                                              $line=255;
+                                                                                                                                                                                                                                                                                              $result="nor";
                                                                                                                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                                             else {
-                                                                                                                                                                                                                                                                                              $line=219;
-                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"canPu")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                                                                                                                $line=219;
-                                                                                                                                                                                                                                                                                                $result="canPut";
+                                                                                                                                                                                                                                                                                              $line=256;
+                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"nor")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                                                                                                                                                $line=256;
+                                                                                                                                                                                                                                                                                                $result="nort";
                                                                                                                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                                                                               else {
-                                                                                                                                                                                                                                                                                                $line=220;
-                                                                                                                                                                                                                                                                                                if ($opEqualY(q,"canPut")) {
-                                                                                                                                                                                                                                                                                                  $line=220;
-                                                                                                                                                                                                                                                                                                  $result="Init";
+                                                                                                                                                                                                                                                                                                $line=257;
+                                                                                                                                                                                                                                                                                                if (($opEqualY(q,"nort")&&$opEqualY(\u03C3,'h'))) {
+                                                                                                                                                                                                                                                                                                  $line=257;
+                                                                                                                                                                                                                                                                                                  $result="north";
                                                                                                                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                                                 else {
-                                                                                                                                                                                                                                                                                                  $line=222;
-                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'c'))) {
-                                                                                                                                                                                                                                                                                                    $line=222;
-                                                                                                                                                                                                                                                                                                    $result="c";
+                                                                                                                                                                                                                                                                                                  $line=260;
+                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'s'))) {
+                                                                                                                                                                                                                                                                                                    $line=260;
+                                                                                                                                                                                                                                                                                                    $result="s";
                                                                                                                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                                                   else {
-                                                                                                                                                                                                                                                                                                    $line=223;
-                                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"c")&&$opEqualY(\u03C3,'a'))) {
-                                                                                                                                                                                                                                                                                                      $line=223;
-                                                                                                                                                                                                                                                                                                      $result="ca";
+                                                                                                                                                                                                                                                                                                    $line=261;
+                                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"s")&&$opEqualY(\u03C3,'o'))) {
+                                                                                                                                                                                                                                                                                                      $line=261;
+                                                                                                                                                                                                                                                                                                      $result="so";
                                                                                                                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                                                     else {
-                                                                                                                                                                                                                                                                                                      $line=224;
-                                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"ca")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                                                                                                                                                                        $line=224;
-                                                                                                                                                                                                                                                                                                        $result="can";
+                                                                                                                                                                                                                                                                                                      $line=262;
+                                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"so")&&$opEqualY(\u03C3,'u'))) {
+                                                                                                                                                                                                                                                                                                        $line=262;
+                                                                                                                                                                                                                                                                                                        $result="sou";
                                                                                                                                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                                                                       else {
-                                                                                                                                                                                                                                                                                                        $line=225;
-                                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"can")&&$opEqualY(\u03C3,'M'))) {
-                                                                                                                                                                                                                                                                                                          $line=225;
-                                                                                                                                                                                                                                                                                                          $result="canM";
+                                                                                                                                                                                                                                                                                                        $line=263;
+                                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"sou")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                                                                                                                                                          $line=263;
+                                                                                                                                                                                                                                                                                                          $result="sout";
                                                                                                                                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                                                         else {
-                                                                                                                                                                                                                                                                                                          $line=226;
-                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"canM")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                                                                                                                                                                                                            $line=226;
-                                                                                                                                                                                                                                                                                                            $result="canMo";
+                                                                                                                                                                                                                                                                                                          $line=264;
+                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"sout")&&$opEqualY(\u03C3,'h'))) {
+                                                                                                                                                                                                                                                                                                            $line=264;
+                                                                                                                                                                                                                                                                                                            $result="south";
                                                                                                                                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                                                                           else {
-                                                                                                                                                                                                                                                                                                            $line=227;
-                                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"canMo")&&$opEqualY(\u03C3,'v'))) {
-                                                                                                                                                                                                                                                                                                              $line=227;
-                                                                                                                                                                                                                                                                                                              $result="canMov";
+                                                                                                                                                                                                                                                                                                            $line=267;
+                                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'w'))) {
+                                                                                                                                                                                                                                                                                                              $line=267;
+                                                                                                                                                                                                                                                                                                              $result="w";
                                                                                                                                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                                                             else {
-                                                                                                                                                                                                                                                                                                              $line=228;
-                                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"canMov")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                                                                                                                $line=228;
-                                                                                                                                                                                                                                                                                                                $result="canMove";
+                                                                                                                                                                                                                                                                                                              $line=268;
+                                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"w")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                                                                                                                                                $line=268;
+                                                                                                                                                                                                                                                                                                                $result="we";
                                                                                                                                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                                                                                               else {
-                                                                                                                                                                                                                                                                                                                $line=229;
-                                                                                                                                                                                                                                                                                                                if ($opEqualY(q,"canMove")) {
-                                                                                                                                                                                                                                                                                                                  $line=229;
-                                                                                                                                                                                                                                                                                                                  $result="Init";
+                                                                                                                                                                                                                                                                                                                $line=269;
+                                                                                                                                                                                                                                                                                                                if (($opEqualY(q,"we")&&$opEqualY(\u03C3,'s'))) {
+                                                                                                                                                                                                                                                                                                                  $line=269;
+                                                                                                                                                                                                                                                                                                                  $result="wes";
                                                                                                                                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                                                                 else {
-                                                                                                                                                                                                                                                                                                                  $line=231;
-                                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                                                                                                                                                                                    $line=231;
-                                                                                                                                                                                                                                                                                                                    $result="n";
+                                                                                                                                                                                                                                                                                                                  $line=270;
+                                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"wes")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                                                                                                                                                                    $line=270;
+                                                                                                                                                                                                                                                                                                                    $result="west";
                                                                                                                                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                                                                   else {
-                                                                                                                                                                                                                                                                                                                    $line=232;
-                                                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"n")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                                                                                                                                                                                                                      $line=232;
-                                                                                                                                                                                                                                                                                                                      $result="no";
+                                                                                                                                                                                                                                                                                                                    $line=273;
+                                                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'e'))) {
+                                                                                                                                                                                                                                                                                                                      $line=273;
+                                                                                                                                                                                                                                                                                                                      $result="e";
                                                                                                                                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                                                                     else {
-                                                                                                                                                                                                                                                                                                                      $line=233;
-                                                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"no")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                                                                                                                                        $line=233;
-                                                                                                                                                                                                                                                                                                                        $result="not";
+                                                                                                                                                                                                                                                                                                                      $line=274;
+                                                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"e")&&$opEqualY(\u03C3,'a'))) {
+                                                                                                                                                                                                                                                                                                                        $line=274;
+                                                                                                                                                                                                                                                                                                                        $result="ea";
                                                                                                                                                                                                                                                                                                                         if (true) break $try;
                                                                                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                                                                                       else {
-                                                                                                                                                                                                                                                                                                                        $line=234;
-                                                                                                                                                                                                                                                                                                                        if ($opEqualY(q,"not")) {
-                                                                                                                                                                                                                                                                                                                          $line=234;
-                                                                                                                                                                                                                                                                                                                          $result="Init";
+                                                                                                                                                                                                                                                                                                                        $line=275;
+                                                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"ea")&&$opEqualY(\u03C3,'s'))) {
+                                                                                                                                                                                                                                                                                                                          $line=275;
+                                                                                                                                                                                                                                                                                                                          $result="eas";
                                                                                                                                                                                                                                                                                                                           if (true) break $try;
                                                                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                                                                         else {
-                                                                                                                                                                                                                                                                                                                          $line=236;
-                                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'C'))) {
-                                                                                                                                                                                                                                                                                                                            $line=236;
-                                                                                                                                                                                                                                                                                                                            $result="C";
+                                                                                                                                                                                                                                                                                                                          $line=276;
+                                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"eas")&&$opEqualY(\u03C3,'t'))) {
+                                                                                                                                                                                                                                                                                                                            $line=276;
+                                                                                                                                                                                                                                                                                                                            $result="east";
                                                                                                                                                                                                                                                                                                                             if (true) break $try;
                                                                                                                                                                                                                                                                                                                           }
                                                                                                                                                                                                                                                                                                                           else {
-                                                                                                                                                                                                                                                                                                                            $line=237;
-                                                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"C")&&$opEqualY(\u03C3,'h'))) {
-                                                                                                                                                                                                                                                                                                                              $line=237;
-                                                                                                                                                                                                                                                                                                                              $result="Ch";
+                                                                                                                                                                                                                                                                                                                            $line=279;
+                                                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"Init")&&$opMembrY(\u03C3,$opIntvlY('0','9')))) {
+                                                                                                                                                                                                                                                                                                                              $line=279;
+                                                                                                                                                                                                                                                                                                                              $result="Num";
                                                                                                                                                                                                                                                                                                                               if (true) break $try;
                                                                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                                                                             else {
-                                                                                                                                                                                                                                                                                                                              $line=238;
-                                                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"Ch")&&$opEqualY(\u03C3,'i'))) {
-                                                                                                                                                                                                                                                                                                                                $line=238;
-                                                                                                                                                                                                                                                                                                                                $result="Chi";
+                                                                                                                                                                                                                                                                                                                              $line=280;
+                                                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"Num")&&$opMembrY(\u03C3,$opIntvlY('0','9')))) {
+                                                                                                                                                                                                                                                                                                                                $line=280;
+                                                                                                                                                                                                                                                                                                                                $result="Num";
                                                                                                                                                                                                                                                                                                                                 if (true) break $try;
                                                                                                                                                                                                                                                                                                                               }
                                                                                                                                                                                                                                                                                                                               else {
-                                                                                                                                                                                                                                                                                                                                $line=239;
-                                                                                                                                                                                                                                                                                                                                if (($opEqualY(q,"Chip")&&$opEqualY(\u03C3,'p'))) {
-                                                                                                                                                                                                                                                                                                                                  $line=239;
-                                                                                                                                                                                                                                                                                                                                  $result="Chip";
+                                                                                                                                                                                                                                                                                                                                $line=283;
+                                                                                                                                                                                                                                                                                                                                if (($opEqualY(q,"Init")&&$opMembrY(\u03C3,$opIntvlY('a','z')))) {
+                                                                                                                                                                                                                                                                                                                                  $line=283;
+                                                                                                                                                                                                                                                                                                                                  $result="Nombre";
                                                                                                                                                                                                                                                                                                                                   if (true) break $try;
                                                                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                                                                                 else {
-                                                                                                                                                                                                                                                                                                                                  $line=240;
-                                                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Chip")&&$opEqualY(\u03C3,'s'))) {
-                                                                                                                                                                                                                                                                                                                                    $line=240;
-                                                                                                                                                                                                                                                                                                                                    $result="Chips";
+                                                                                                                                                                                                                                                                                                                                  $line=284;
+                                                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Nombre")&&$opMembrY(\u03C3,$opIntvlY('a','z')))) {
+                                                                                                                                                                                                                                                                                                                                    $line=284;
+                                                                                                                                                                                                                                                                                                                                    $result="Nombre";
                                                                                                                                                                                                                                                                                                                                     if (true) break $try;
                                                                                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                                                                                   else {
-                                                                                                                                                                                                                                                                                                                                    $line=241;
-                                                                                                                                                                                                                                                                                                                                    if ($opEqualY(q,"Chips")) {
-                                                                                                                                                                                                                                                                                                                                      $line=241;
+                                                                                                                                                                                                                                                                                                                                    $line=287;
+                                                                                                                                                                                                                                                                                                                                    if (($bool((((((((((((((((((((((((((((((((((((($opEqualY(q,"Nombre")||$opEqualY(q,"Num"))||$opEqualY(q,"east"))||$opEqualY(q,"west"))||$opEqualY(q,"south"))||$opEqualY(q,"north"))||$opEqualY(q,"Ballons"))||$opEqualY(q,"Chips"))||$opEqualY(q,"not"))||$opEqualY(q,"canMove"))||$opEqualY(q,"canPut"))||$opEqualY(q,"facing"))||$opEqualY(q,"times"))||$opEqualY(q,"repeat"))||$opEqualY(q,"do"))||$opEqualY(q,"while"))||$opEqualY(q,"else"))||$opEqualY(q,"then"))||$opEqualY(q,"if"))||$opEqualY(q,"front"))||$opEqualY(q,"back"))||$opEqualY(q,"left"))||$opEqualY(q,"right"))||$opEqualY(q,"inDir"))||$opEqualY(q,"ToThe"))||$opEqualY(q,"pick"))||$opEqualY(q,"of"))||$opEqualY(q,"put"))||$opEqualY(q,"face"))||$opEqualY(q,"turn"))||$opEqualY(q,"move"))||$opEqualY(q,"to"))||$opEqualY(q,"assign"))||$opEqualY(q,"END"))||$opEqualY(q,"BEGIN"))||$opEqualY(q,"VARS"))||$opEqualY(q,"ROBOT_R")))&&$opMembrY(\u03C3,GCollections.asSet('\n','\t',' ')))) {
+                                                                                                                                                                                                                                                                                                                                      $line=294;
                                                                                                                                                                                                                                                                                                                                       $result="Init";
                                                                                                                                                                                                                                                                                                                                       if (true) break $try;
                                                                                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                                                                                     else {
-                                                                                                                                                                                                                                                                                                                                      $line=243;
-                                                                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'B'))) {
-                                                                                                                                                                                                                                                                                                                                        $line=243;
-                                                                                                                                                                                                                                                                                                                                        $result="B";
-                                                                                                                                                                                                                                                                                                                                        if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                      else {
-                                                                                                                                                                                                                                                                                                                                        $line=244;
-                                                                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"B")&&$opEqualY(\u03C3,'a'))) {
-                                                                                                                                                                                                                                                                                                                                          $line=244;
-                                                                                                                                                                                                                                                                                                                                          $result="Ba";
-                                                                                                                                                                                                                                                                                                                                          if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                        else {
-                                                                                                                                                                                                                                                                                                                                          $line=245;
-                                                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"Ba")&&$opEqualY(\u03C3,'l'))) {
-                                                                                                                                                                                                                                                                                                                                            $line=245;
-                                                                                                                                                                                                                                                                                                                                            $result="Bal";
-                                                                                                                                                                                                                                                                                                                                            if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                          else {
-                                                                                                                                                                                                                                                                                                                                            $line=246;
-                                                                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"Bal")&&$opEqualY(\u03C3,'l'))) {
-                                                                                                                                                                                                                                                                                                                                              $line=246;
-                                                                                                                                                                                                                                                                                                                                              $result="Ball";
-                                                                                                                                                                                                                                                                                                                                              if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                            else {
-                                                                                                                                                                                                                                                                                                                                              $line=247;
-                                                                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"Ball")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                                                                                                                                                                                                                                                $line=247;
-                                                                                                                                                                                                                                                                                                                                                $result="Ballo";
-                                                                                                                                                                                                                                                                                                                                                if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                              else {
-                                                                                                                                                                                                                                                                                                                                                $line=248;
-                                                                                                                                                                                                                                                                                                                                                if (($opEqualY(q,"Ballo")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                                                                                                                                                                                                                  $line=248;
-                                                                                                                                                                                                                                                                                                                                                  $result="Ballon";
-                                                                                                                                                                                                                                                                                                                                                  if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                else {
-                                                                                                                                                                                                                                                                                                                                                  $line=249;
-                                                                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Ballon")&&$opEqualY(\u03C3,'s'))) {
-                                                                                                                                                                                                                                                                                                                                                    $line=249;
-                                                                                                                                                                                                                                                                                                                                                    $result="Ballons";
-                                                                                                                                                                                                                                                                                                                                                    if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                  else {
-                                                                                                                                                                                                                                                                                                                                                    $line=250;
-                                                                                                                                                                                                                                                                                                                                                    if ($opEqualY(q,"Ballons")) {
-                                                                                                                                                                                                                                                                                                                                                      $line=250;
-                                                                                                                                                                                                                                                                                                                                                      $result="Init";
-                                                                                                                                                                                                                                                                                                                                                      if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                    else {
-                                                                                                                                                                                                                                                                                                                                                      $line=252;
-                                                                                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'n'))) {
-                                                                                                                                                                                                                                                                                                                                                        $line=252;
-                                                                                                                                                                                                                                                                                                                                                        $result="n";
-                                                                                                                                                                                                                                                                                                                                                        if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                      else {
-                                                                                                                                                                                                                                                                                                                                                        $line=253;
-                                                                                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"n")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                                                                                                                                                                                                                                                          $line=253;
-                                                                                                                                                                                                                                                                                                                                                          $result="no";
-                                                                                                                                                                                                                                                                                                                                                          if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                        else {
-                                                                                                                                                                                                                                                                                                                                                          $line=254;
-                                                                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"no")&&$opEqualY(\u03C3,'r'))) {
-                                                                                                                                                                                                                                                                                                                                                            $line=254;
-                                                                                                                                                                                                                                                                                                                                                            $result="nor";
-                                                                                                                                                                                                                                                                                                                                                            if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                          else {
-                                                                                                                                                                                                                                                                                                                                                            $line=255;
-                                                                                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"nor")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                                                                                                                                                                              $line=255;
-                                                                                                                                                                                                                                                                                                                                                              $result="nort";
-                                                                                                                                                                                                                                                                                                                                                              if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                            else {
-                                                                                                                                                                                                                                                                                                                                                              $line=256;
-                                                                                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"nort")&&$opEqualY(\u03C3,'h'))) {
-                                                                                                                                                                                                                                                                                                                                                                $line=256;
-                                                                                                                                                                                                                                                                                                                                                                $result="north";
-                                                                                                                                                                                                                                                                                                                                                                if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                              else {
-                                                                                                                                                                                                                                                                                                                                                                $line=257;
-                                                                                                                                                                                                                                                                                                                                                                if ($opEqualY(q,"north")) {
-                                                                                                                                                                                                                                                                                                                                                                  $line=257;
-                                                                                                                                                                                                                                                                                                                                                                  $result="Init";
-                                                                                                                                                                                                                                                                                                                                                                  if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                else {
-                                                                                                                                                                                                                                                                                                                                                                  $line=259;
-                                                                                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'s'))) {
-                                                                                                                                                                                                                                                                                                                                                                    $line=259;
-                                                                                                                                                                                                                                                                                                                                                                    $result="s";
-                                                                                                                                                                                                                                                                                                                                                                    if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                  else {
-                                                                                                                                                                                                                                                                                                                                                                    $line=260;
-                                                                                                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"s")&&$opEqualY(\u03C3,'o'))) {
-                                                                                                                                                                                                                                                                                                                                                                      $line=260;
-                                                                                                                                                                                                                                                                                                                                                                      $result="so";
-                                                                                                                                                                                                                                                                                                                                                                      if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                    else {
-                                                                                                                                                                                                                                                                                                                                                                      $line=261;
-                                                                                                                                                                                                                                                                                                                                                                      if (($opEqualY(q,"so")&&$opEqualY(\u03C3,'u'))) {
-                                                                                                                                                                                                                                                                                                                                                                        $line=261;
-                                                                                                                                                                                                                                                                                                                                                                        $result="sou";
-                                                                                                                                                                                                                                                                                                                                                                        if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                      else {
-                                                                                                                                                                                                                                                                                                                                                                        $line=262;
-                                                                                                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"sou")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                                                                                                                                                                                          $line=262;
-                                                                                                                                                                                                                                                                                                                                                                          $result="sout";
-                                                                                                                                                                                                                                                                                                                                                                          if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                        else {
-                                                                                                                                                                                                                                                                                                                                                                          $line=263;
-                                                                                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"sout")&&$opEqualY(\u03C3,'h'))) {
-                                                                                                                                                                                                                                                                                                                                                                            $line=263;
-                                                                                                                                                                                                                                                                                                                                                                            $result="south";
-                                                                                                                                                                                                                                                                                                                                                                            if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                          else {
-                                                                                                                                                                                                                                                                                                                                                                            $line=264;
-                                                                                                                                                                                                                                                                                                                                                                            if ($opEqualY(q,"south")) {
-                                                                                                                                                                                                                                                                                                                                                                              $line=264;
-                                                                                                                                                                                                                                                                                                                                                                              $result="Init";
-                                                                                                                                                                                                                                                                                                                                                                              if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                            else {
-                                                                                                                                                                                                                                                                                                                                                                              $line=266;
-                                                                                                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'w'))) {
-                                                                                                                                                                                                                                                                                                                                                                                $line=266;
-                                                                                                                                                                                                                                                                                                                                                                                $result="w";
-                                                                                                                                                                                                                                                                                                                                                                                if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                                              else {
-                                                                                                                                                                                                                                                                                                                                                                                $line=267;
-                                                                                                                                                                                                                                                                                                                                                                                if (($opEqualY(q,"w")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                                                                                                                                                                                  $line=267;
-                                                                                                                                                                                                                                                                                                                                                                                  $result="we";
-                                                                                                                                                                                                                                                                                                                                                                                  if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                                else {
-                                                                                                                                                                                                                                                                                                                                                                                  $line=268;
-                                                                                                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"we")&&$opEqualY(\u03C3,'s'))) {
-                                                                                                                                                                                                                                                                                                                                                                                    $line=268;
-                                                                                                                                                                                                                                                                                                                                                                                    $result="wes";
-                                                                                                                                                                                                                                                                                                                                                                                    if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                                  else {
-                                                                                                                                                                                                                                                                                                                                                                                    $line=269;
-                                                                                                                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"wes")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                                                                                                                                                                                                      $line=269;
-                                                                                                                                                                                                                                                                                                                                                                                      $result="west";
-                                                                                                                                                                                                                                                                                                                                                                                      if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                    else {
-                                                                                                                                                                                                                                                                                                                                                                                      $line=270;
-                                                                                                                                                                                                                                                                                                                                                                                      if ($opEqualY(q,"west")) {
-                                                                                                                                                                                                                                                                                                                                                                                        $line=270;
-                                                                                                                                                                                                                                                                                                                                                                                        $result="Init";
-                                                                                                                                                                                                                                                                                                                                                                                        if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                                      else {
-                                                                                                                                                                                                                                                                                                                                                                                        $line=272;
-                                                                                                                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"Init")&&$opEqualY(\u03C3,'e'))) {
-                                                                                                                                                                                                                                                                                                                                                                                          $line=272;
-                                                                                                                                                                                                                                                                                                                                                                                          $result="e";
-                                                                                                                                                                                                                                                                                                                                                                                          if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                        else {
-                                                                                                                                                                                                                                                                                                                                                                                          $line=273;
-                                                                                                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"e")&&$opEqualY(\u03C3,'a'))) {
-                                                                                                                                                                                                                                                                                                                                                                                            $line=273;
-                                                                                                                                                                                                                                                                                                                                                                                            $result="ea";
-                                                                                                                                                                                                                                                                                                                                                                                            if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                          else {
-                                                                                                                                                                                                                                                                                                                                                                                            $line=274;
-                                                                                                                                                                                                                                                                                                                                                                                            if (($opEqualY(q,"ea")&&$opEqualY(\u03C3,'s'))) {
-                                                                                                                                                                                                                                                                                                                                                                                              $line=274;
-                                                                                                                                                                                                                                                                                                                                                                                              $result="eas";
-                                                                                                                                                                                                                                                                                                                                                                                              if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                                            else {
-                                                                                                                                                                                                                                                                                                                                                                                              $line=275;
-                                                                                                                                                                                                                                                                                                                                                                                              if (($opEqualY(q,"eas")&&$opEqualY(\u03C3,'t'))) {
-                                                                                                                                                                                                                                                                                                                                                                                                $line=275;
-                                                                                                                                                                                                                                                                                                                                                                                                $result="east";
-                                                                                                                                                                                                                                                                                                                                                                                                if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                                                              else {
-                                                                                                                                                                                                                                                                                                                                                                                                $line=276;
-                                                                                                                                                                                                                                                                                                                                                                                                if ($opEqualY(q,"east")) {
-                                                                                                                                                                                                                                                                                                                                                                                                  $line=276;
-                                                                                                                                                                                                                                                                                                                                                                                                  $result="Init";
-                                                                                                                                                                                                                                                                                                                                                                                                  if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                                                else {
-                                                                                                                                                                                                                                                                                                                                                                                                  $line=278;
-                                                                                                                                                                                                                                                                                                                                                                                                  if (($opEqualY(q,"Init")&&$opMembrY(\u03C3,$opIntvlY('0','9')))) {
-                                                                                                                                                                                                                                                                                                                                                                                                    $line=278;
-                                                                                                                                                                                                                                                                                                                                                                                                    $result="Num";
-                                                                                                                                                                                                                                                                                                                                                                                                    if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                                                  else {
-                                                                                                                                                                                                                                                                                                                                                                                                    $line=279;
-                                                                                                                                                                                                                                                                                                                                                                                                    if (($opEqualY(q,"Num")&&$opMembrY(\u03C3,$opIntvlY('0','9')))) {
-                                                                                                                                                                                                                                                                                                                                                                                                      $line=279;
-                                                                                                                                                                                                                                                                                                                                                                                                      $result="Num";
-                                                                                                                                                                                                                                                                                                                                                                                                      if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                    else {
-                                                                                                                                                                                                                                                                                                                                                                                                      $line=280;
-                                                                                                                                                                                                                                                                                                                                                                                                      if ($opEqualY(q,"Num")) {
-                                                                                                                                                                                                                                                                                                                                                                                                        $line=280;
-                                                                                                                                                                                                                                                                                                                                                                                                        $result="Init";
-                                                                                                                                                                                                                                                                                                                                                                                                        if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                                                      else {
-                                                                                                                                                                                                                                                                                                                                                                                                        $line=282;
-                                                                                                                                                                                                                                                                                                                                                                                                        if (($opEqualY(q,"I")&&$opMembrY(\u03C3,$opIntvlY('a','z')))) {
-                                                                                                                                                                                                                                                                                                                                                                                                          $line=282;
-                                                                                                                                                                                                                                                                                                                                                                                                          $result="Nombre";
-                                                                                                                                                                                                                                                                                                                                                                                                          if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                                        else {
-                                                                                                                                                                                                                                                                                                                                                                                                          $line=283;
-                                                                                                                                                                                                                                                                                                                                                                                                          if (($opEqualY(q,"Nombre")&&$opMembrY(\u03C3,$opIntvlY('a','z')))) {
-                                                                                                                                                                                                                                                                                                                                                                                                            $line=283;
-                                                                                                                                                                                                                                                                                                                                                                                                            $result="Nombre";
-                                                                                                                                                                                                                                                                                                                                                                                                            if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                                          else {
-                                                                                                                                                                                                                                                                                                                                                                                                            $line=284;
-                                                                                                                                                                                                                                                                                                                                                                                                            if ($opEqualY(q,"Nombre")) {
-                                                                                                                                                                                                                                                                                                                                                                                                              $line=284;
-                                                                                                                                                                                                                                                                                                                                                                                                              $result="I";
-                                                                                                                                                                                                                                                                                                                                                                                                              if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                                                            else {
-                                                                                                                                                                                                                                                                                                                                                                                                              $line=286;
-                                                                                                                                                                                                                                                                                                                                                                                                              $result="Init";
-                                                                                                                                                                                                                                                                                                                                                                                                              if (true) break $try;
-                                                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                                                                                                                                          }
-                                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                                                                      $line=296;
+                                                                                                                                                                                                                                                                                                                                      $result="ERROR";
+                                                                                                                                                                                                                                                                                                                                      if (true) break $try;
                                                                                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                                                                                   }
                                                                                                                                                                                                                                                                                                                                 }
@@ -1658,7 +1370,7 @@ public final class Lexer {
           }
         }
       }
-      $line=290;
+      $line=300;
       $rethrow(new RuntimeException("The function \"\u03B4(q:Object,\u03C3:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -1670,10 +1382,10 @@ public final class Lexer {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=295;
+      $line=305;
       $result="";
       if (true) break $try;
-      $line=296;
+      $line=306;
       $rethrow(new RuntimeException("The function \"g(q:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
@@ -1685,299 +1397,299 @@ public final class Lexer {
     int $line=0;
     Object $result=null;
     $try:try {
-      $line=300;
+      $line=310;
       String s=null;
       s=$defaultValue(String.class);
-      $line=301;
+      $line=311;
       s=$cast(String.class,$fix(""));
-      $line=303;
-      if ($opEqualY(q,"Error")) {
-        $line=303;
-        $result=s;
+      $line=313;
+      if ($opEqualY(q,"ERROR")) {
+        $line=313;
+        $result="$";
         if (true) break $try;
       }
       else {
-        $line=305;
-        if ($opMembrY(\u03C3,GCollections.asSet('(',')',' ',',','\n','\t',';',':',' '))) {
-          $line=306;
+        $line=315;
+        if ($opMembrY(\u03C3,GCollections.asSet(' ',',','\n','\t',';',':',' '))) {
+          $line=316;
           if (!$opMembrY(\u03C3,GCollections.asSet(' ','\n','\t'))) {
-            $line=306;
+            $line=316;
             s=$cast(String.class,$fix($invokeMethod(String.class,"valueOf",true,null,new Object[]{\u03C3})));
           }
-          $line=308;
-          if ($opEqualY(q,"I")) {
-            $line=308;
+          $line=318;
+          if ($opEqualY(q,"Init")) {
+            $line=318;
             $result=s;
             if (true) break $try;
           }
           else {
-            $line=310;
+            $line=320;
             if ($opEqualY(q,"ROBOT_R")) {
-              $line=310;
+              $line=320;
               $result="R";
               if (true) break $try;
             }
             else {
-              $line=312;
+              $line=322;
               if ($opEqualY(q,"VARS")) {
-                $line=312;
+                $line=322;
                 $result="V";
                 if (true) break $try;
               }
               else {
-                $line=314;
+                $line=324;
                 if ($opEqualY(q,"BEGIN")) {
-                  $line=314;
+                  $line=324;
                   $result="B";
                   if (true) break $try;
                 }
                 else {
-                  $line=316;
-                  if ($opEqualY(q,"assign")) {
-                    $line=316;
-                    $result=$opAdditY("a",s);
+                  $line=326;
+                  if ($opEqualY(q,"END")) {
+                    $line=326;
+                    $result="E";
                     if (true) break $try;
                   }
                   else {
-                    $line=318;
-                    if ($opEqualY(q,"move")) {
-                      $line=318;
-                      $result=$opAdditY("m",s);
+                    $line=328;
+                    if ($opEqualY(q,"Num")) {
+                      $line=328;
+                      $result=$opAdditY("n",s);
                       if (true) break $try;
                     }
                     else {
-                      $line=320;
-                      if ($opEqualY(q,"InDir")) {
-                        $line=320;
-                        $result=$opAdditY("D",s);
+                      $line=330;
+                      if ($opEqualY(q,"front")) {
+                        $line=330;
+                        $result=$opAdditY("F",s);
                         if (true) break $try;
                       }
                       else {
-                        $line=322;
-                        if ($opEqualY(q,"ToThe")) {
-                          $line=322;
-                          $result=$opAdditY("T",s);
+                        $line=332;
+                        if ($opEqualY(q,"right")) {
+                          $line=332;
+                          $result=$opAdditY("R",s);
                           if (true) break $try;
                         }
                         else {
-                          $line=324;
-                          if ($opEqualY(q,"turn")) {
-                            $line=324;
-                            $result=$opAdditY("t",s);
+                          $line=334;
+                          if ($opEqualY(q,"left")) {
+                            $line=334;
+                            $result=$opAdditY("L",s);
                             if (true) break $try;
                           }
                           else {
-                            $line=326;
-                            if ($opEqualY(q,"face")) {
-                              $line=326;
-                              $result=$opAdditY("f",s);
+                            $line=336;
+                            if ($opEqualY(q,"around")) {
+                              $line=336;
+                              $result=$opAdditY("r",s);
                               if (true) break $try;
                             }
                             else {
-                              $line=328;
-                              if ($opEqualY(q,"put")) {
-                                $line=328;
-                                $result=$opAdditY("P",s);
+                              $line=338;
+                              if ($opEqualY(q,"back")) {
+                                $line=338;
+                                $result=$opAdditY("K",s);
                                 if (true) break $try;
                               }
                               else {
-                                $line=330;
-                                if ($opEqualY(q,"pick")) {
-                                  $line=330;
-                                  $result=$opAdditY("p",s);
+                                $line=342;
+                                if ($opEqualY(q,"Nombre")) {
+                                  $line=342;
+                                  $result=$opAdditY("N",s);
                                   if (true) break $try;
                                 }
                                 else {
-                                  $line=332;
-                                  if ($opEqualY(q,"END")) {
-                                    $line=332;
-                                    $result="E";
+                                  $line=344;
+                                  if ($opEqualY(q,"Chips")) {
+                                    $line=344;
+                                    $result=$opAdditY("C",s);
                                     if (true) break $try;
                                   }
                                   else {
-                                    $line=334;
-                                    if ($opEqualY(q,"Num")) {
-                                      $line=334;
-                                      $result=$opAdditY("n",s);
+                                    $line=346;
+                                    if ($opEqualY(q,"Balloons")) {
+                                      $line=346;
+                                      $result=$opAdditY("O",s);
                                       if (true) break $try;
                                     }
                                     else {
-                                      $line=336;
-                                      if ($opEqualY(q,"front")) {
-                                        $line=336;
-                                        $result=$opAdditY("F",s);
+                                      $line=348;
+                                      if ($opEqualY(q,"north")) {
+                                        $line=348;
+                                        $result=$opAdditY("z",s);
                                         if (true) break $try;
                                       }
                                       else {
-                                        $line=338;
-                                        if ($opEqualY(q,"right")) {
-                                          $line=338;
-                                          $result=$opAdditY("R",s);
+                                        $line=350;
+                                        if ($opEqualY(q,"south")) {
+                                          $line=350;
+                                          $result=$opAdditY("s",s);
                                           if (true) break $try;
                                         }
                                         else {
-                                          $line=340;
-                                          if ($opEqualY(q,"left")) {
-                                            $line=340;
-                                            $result=$opAdditY("L",s);
+                                          $line=352;
+                                          if ($opEqualY(q,"east")) {
+                                            $line=352;
+                                            $result=$opAdditY("e",s);
                                             if (true) break $try;
                                           }
                                           else {
-                                            $line=342;
-                                            if ($opEqualY(q,"around")) {
-                                              $line=342;
-                                              $result=$opAdditY("r",s);
+                                            $line=354;
+                                            if ($opEqualY(q,"west")) {
+                                              $line=354;
+                                              $result=$opAdditY("W",s);
                                               if (true) break $try;
                                             }
                                             else {
-                                              $line=344;
-                                              if ($opEqualY(q,"back")) {
-                                                $line=344;
-                                                $result=$opAdditY("K",s);
+                                              $line=357;
+                                              if ($opEqualY(q,"assign")) {
+                                                $line=357;
+                                                $result=$opAdditY("a",s);
                                                 if (true) break $try;
                                               }
                                               else {
-                                                $line=348;
-                                                if ($opEqualY(q,"Nombre")) {
-                                                  $line=348;
-                                                  $result=$opAdditY("N",s);
+                                                $line=359;
+                                                if ($opEqualY(q,"move")) {
+                                                  $line=359;
+                                                  $result=$opAdditY("m",s);
                                                   if (true) break $try;
                                                 }
                                                 else {
-                                                  $line=350;
-                                                  if ($opEqualY(q,"if")) {
-                                                    $line=350;
-                                                    $result=$opAdditY("i",s);
+                                                  $line=361;
+                                                  if ($opEqualY(q,"InDir")) {
+                                                    $line=361;
+                                                    $result=$opAdditY("D",s);
                                                     if (true) break $try;
                                                   }
                                                   else {
-                                                    $line=352;
-                                                    if ($opEqualY(q,"then")) {
-                                                      $line=352;
-                                                      $result=$opAdditY("h",s);
+                                                    $line=363;
+                                                    if ($opEqualY(q,"ToThe")) {
+                                                      $line=363;
+                                                      $result=$opAdditY("T",s);
                                                       if (true) break $try;
                                                     }
                                                     else {
-                                                      $line=354;
-                                                      if ($opEqualY(q,"else")) {
-                                                        $line=354;
-                                                        $result=$opAdditY("l",s);
+                                                      $line=365;
+                                                      if ($opEqualY(q,"turn")) {
+                                                        $line=365;
+                                                        $result=$opAdditY("t",s);
                                                         if (true) break $try;
                                                       }
                                                       else {
-                                                        $line=356;
-                                                        if ($opEqualY(q,"while")) {
-                                                          $line=356;
-                                                          $result=$opAdditY("w",s);
+                                                        $line=367;
+                                                        if ($opEqualY(q,"face")) {
+                                                          $line=367;
+                                                          $result=$opAdditY("f",s);
                                                           if (true) break $try;
                                                         }
                                                         else {
-                                                          $line=358;
-                                                          if ($opEqualY(q,"do")) {
-                                                            $line=358;
-                                                            $result=$opAdditY("d",s);
+                                                          $line=369;
+                                                          if ($opEqualY(q,"put")) {
+                                                            $line=369;
+                                                            $result=$opAdditY("P",s);
                                                             if (true) break $try;
                                                           }
                                                           else {
-                                                            $line=360;
-                                                            if ($opEqualY(q,"repeat")) {
-                                                              $line=360;
-                                                              $result=$opAdditY("r",s);
+                                                            $line=371;
+                                                            if ($opEqualY(q,"pick")) {
+                                                              $line=371;
+                                                              $result=$opAdditY("p",s);
                                                               if (true) break $try;
                                                             }
                                                             else {
-                                                              $line=362;
-                                                              if ($opEqualY(q,"times")) {
-                                                                $line=362;
-                                                                $result=$opAdditY("I",s);
+                                                              $line=373;
+                                                              if ($opEqualY(q,"if")) {
+                                                                $line=373;
+                                                                $result=$opAdditY("i",s);
                                                                 if (true) break $try;
                                                               }
                                                               else {
-                                                                $line=364;
-                                                                if ($opEqualY(q,"facing")) {
-                                                                  $line=364;
-                                                                  $result=$opAdditY("g",s);
+                                                                $line=375;
+                                                                if ($opEqualY(q,"then")) {
+                                                                  $line=375;
+                                                                  $result=$opAdditY("h",s);
                                                                   if (true) break $try;
                                                                 }
                                                                 else {
-                                                                  $line=366;
-                                                                  if ($opEqualY(q,"canPut")) {
-                                                                    $line=366;
-                                                                    $result=$opAdditY("u",s);
+                                                                  $line=377;
+                                                                  if ($opEqualY(q,"else")) {
+                                                                    $line=377;
+                                                                    $result=$opAdditY("l",s);
                                                                     if (true) break $try;
                                                                   }
                                                                   else {
-                                                                    $line=368;
-                                                                    if ($opEqualY(q,"of")) {
-                                                                      $line=368;
-                                                                      $result=$opAdditY("o",s);
+                                                                    $line=379;
+                                                                    if ($opEqualY(q,"while")) {
+                                                                      $line=379;
+                                                                      $result=$opAdditY("w",s);
                                                                       if (true) break $try;
                                                                     }
                                                                     else {
-                                                                      $line=370;
-                                                                      if ($opEqualY(q,"canMove")) {
-                                                                        $line=370;
-                                                                        $result=$opAdditY("c",s);
+                                                                      $line=381;
+                                                                      if ($opEqualY(q,"do")) {
+                                                                        $line=381;
+                                                                        $result=$opAdditY("d",s);
                                                                         if (true) break $try;
                                                                       }
                                                                       else {
-                                                                        $line=372;
-                                                                        if ($opEqualY(q,"not")) {
-                                                                          $line=372;
-                                                                          $result=$opAdditY("x",s);
+                                                                        $line=383;
+                                                                        if ($opEqualY(q,"repeat")) {
+                                                                          $line=383;
+                                                                          $result=$opAdditY("r",s);
                                                                           if (true) break $try;
                                                                         }
                                                                         else {
-                                                                          $line=374;
-                                                                          if ($opEqualY(q,"Chips")) {
-                                                                            $line=374;
-                                                                            $result=$opAdditY("C",s);
+                                                                          $line=385;
+                                                                          if ($opEqualY(q,"times")) {
+                                                                            $line=385;
+                                                                            $result=$opAdditY("I",s);
                                                                             if (true) break $try;
                                                                           }
                                                                           else {
-                                                                            $line=376;
-                                                                            if ($opEqualY(q,"Balloons")) {
-                                                                              $line=376;
-                                                                              $result=$opAdditY("O",s);
+                                                                            $line=387;
+                                                                            if ($opEqualY(q,"facing")) {
+                                                                              $line=387;
+                                                                              $result=$opAdditY("g",s);
                                                                               if (true) break $try;
                                                                             }
                                                                             else {
-                                                                              $line=378;
-                                                                              if ($opEqualY(q,"north")) {
-                                                                                $line=378;
-                                                                                $result=$opAdditY("z",s);
+                                                                              $line=389;
+                                                                              if ($opEqualY(q,"canPut")) {
+                                                                                $line=389;
+                                                                                $result=$opAdditY("u",s);
                                                                                 if (true) break $try;
                                                                               }
                                                                               else {
-                                                                                $line=380;
-                                                                                if ($opEqualY(q,"south")) {
-                                                                                  $line=380;
-                                                                                  $result=$opAdditY("s",s);
+                                                                                $line=391;
+                                                                                if ($opEqualY(q,"of")) {
+                                                                                  $line=391;
+                                                                                  $result=$opAdditY("o",s);
                                                                                   if (true) break $try;
                                                                                 }
                                                                                 else {
-                                                                                  $line=382;
-                                                                                  if ($opEqualY(q,"east")) {
-                                                                                    $line=382;
-                                                                                    $result=$opAdditY("e",s);
+                                                                                  $line=393;
+                                                                                  if ($opEqualY(q,"canMove")) {
+                                                                                    $line=393;
+                                                                                    $result=$opAdditY("c",s);
                                                                                     if (true) break $try;
                                                                                   }
                                                                                   else {
-                                                                                    $line=384;
-                                                                                    if ($opEqualY(q,"west")) {
-                                                                                      $line=384;
-                                                                                      $result=$opAdditY("W",s);
+                                                                                    $line=395;
+                                                                                    if ($opEqualY(q,"not")) {
+                                                                                      $line=395;
+                                                                                      $result=$opAdditY("x",s);
                                                                                       if (true) break $try;
                                                                                     }
                                                                                     else {
-                                                                                      $line=388;
+                                                                                      $line=397;
                                                                                       if ($opEqualY(q,"To")) {
-                                                                                        $line=388;
+                                                                                        $line=397;
                                                                                         $result=$opAdditY("U",s);
                                                                                         if (true) break $try;
                                                                                       }
                                                                                       else {
-                                                                                        $line=393;
+                                                                                        $line=403;
                                                                                         $result=$opAdditY("v",s);
                                                                                         if (true) break $try;
                                                                                       }
@@ -2021,12 +1733,12 @@ public final class Lexer {
           }
         }
         else {
-          $line=397;
+          $line=407;
           $result="";
           if (true) break $try;
         }
       }
-      $line=400;
+      $line=410;
       $rethrow(new RuntimeException("The function \"h(q:Object,\u03C3:Object)\" did not return a value."));
     }
     catch (Throwable $throwable) {
