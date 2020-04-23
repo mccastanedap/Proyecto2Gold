@@ -37,19 +37,19 @@ function createTransducer():ITransducer begin
 	"p","pi","pic","pick","T","To","ToT","ToTh","ToThe","i","in","inD","inDi","inDir", "r","ri","rig", "righ", "right", "l", "le", "lef", "left", "b",
 	"ba", "bac", "back", "f", "fr", "fro", "fron", "front", "Num","Nombre", "i", "if", "t", "th", "the", "then", "e", "el", "els", "else", "w","wh","whi",
 	"whil", "while", "d", "do", "r", "re", "rep", "repe", "repea", "repeat", "t", "ti", "tim", "time", "times", "f", "fa", "fac", "faci","facin", "facing",
-	"c","ca","can","canPut", "o","of","c","ca","can","canM","canMo", "canMov", "canMove","n", "no", "not", "C", "Ch", "Chi", "Chip", "Chips", "B","Ba","Bal",
+	"c","ca","can","canP","canPu","canPut", "o","of","c","ca","can","canM","canMo", "canMov", "canMove","n", "no", "not", "C", "Ch", "Chi", "Chip", "Chips", "B","Ba","Bal",
 	"Ball", "Ballo", "Ballon", "Ballons", "n", "no", "nor", "nort", "north", "s", "so", "sou", "sout", "south", "w", "we", "wes", "west","e", "ea", "eas", "east",
-	"ERROR"} ∪ {'R'}
+	"ERROR"} 
 	
-	Σ:=('0'‥'9') ∪ ('a' ‥ 'z') ∪ {'(',')',' '} 
-	Out:={'R','V','B','a','m','D','T','x','C','O','z','s','e','W','U','t','f','p','E','n','F','R','L','r','k','N','i','h','l','w','d','r','I', 'g','u','o','c','v', 'P','K'}
+	Σ:=('0'‥'9') ∪ ('a' ‥ 'z') ∪ ('A' ‥ 'Z') ∪ {'(',')',' ', '_'} 
+	Out:={'R','V','B','a','m','D','T','x','C','O','z','s','e','W','U','t','f','p','E','n','F','R','L','r','k','N','i','h','l','w','d','r','I', 'g','u','o','c','v', 'P','K','$'}
 	q₀:="Init"
-	F:= {"Init"}∪{"END"}
+	F:= {"Init"}∪{"END"}∪{"ERROR"}
 	return 	GDeterministicTransducer(Q,Σ,Out,q₀,F,δ,g,h)
 end
 
 function δ(q,σ) begin
-	if (q = "Err") then return "Err"
+	if (q = "ERROR") then return "ERROR"
 	elseif  σ ∈ {'(',')',' ', '\n' , ',' , '\t' , ';' , ':'} then return "Init"
 	
 		
@@ -310,7 +310,7 @@ function h(q,σ) begin
 		var s: String
 		s:= λ
 		
-		if q=="ERROR" then return s
+		if q=="ERROR" then return "$"
 			
 		elseif σ∈{' ',',','\n','\t',';',':', ' '} then
 			if σ∉{' ','\n','\t'} then s:=String.valueOf(σ) end
@@ -322,22 +322,6 @@ function h(q,σ) begin
 			elseif q=="VARS" then return "V"
 				
 			elseif q=="BEGIN" then return "B"
-				
-			elseif q=="assign" then return "a"+s
-				
-			elseif q=="move" then return "m"+s
-				
-			elseif q=="InDir" then return "D"+s //cambié M por D !!!!!!!
-			
-			elseif q=="ToThe" then return "T"+s  
-			
-			elseif q=="turn" then return "t"+s
-				
-			elseif q=="face" then return "f"+s  //cambié F por f
-				
-			elseif q=="put" then return "P"+s
-				
-			elseif q=="pick" then return "p"+s
 				
 			elseif q=="END" then return "E"
 				
@@ -356,6 +340,35 @@ function h(q,σ) begin
 			//elseif q=="Skip" then return "K"+s
 				
 			elseif q=="Nombre" then return "N"+s
+					
+			elseif q=="Chips" then return "C"+s
+				
+			elseif q=="Balloons" then return "O"+s
+			
+			elseif q=="north" then return "z"+s // cambié n por z
+				
+			elseif q=="south" then return "s"+s
+				
+			elseif q=="east" then return "e"+s  
+	
+			elseif q=="west" then return "W"+s
+			
+			//elseif q=="inDir" then return "i"+s
+			elseif q=="assign" then return "a"+s
+					
+			elseif q=="move" then return "m"+s
+				
+			elseif q=="InDir" then return "D"+s //cambié M por D !!!!!!!
+			
+			elseif q=="ToThe" then return "T"+s  
+			
+			elseif q=="turn" then return "t"+s
+				
+			elseif q=="face" then return "f"+s  //cambié F por f
+				
+			elseif q=="put" then return "P"+s
+				
+			elseif q=="pick" then return "p"+s
 				
 			elseif q=="if" then return "i"+s
 				
@@ -380,22 +393,9 @@ function h(q,σ) begin
 			elseif q=="canMove" then return "c"+s // cambié c por k
 				
 			elseif q=="not" then return "x"+s // cambié n por x
+				
+			elseif q=="To" then return "U"+s // cambié t por U	
 	
-			elseif q=="Chips" then return "C"+s
-				
-			elseif q=="Balloons" then return "O"+s
-			
-			elseif q=="north" then return "z"+s // cambié n por z
-				
-			elseif q=="south" then return "s"+s
-				
-			elseif q=="east" then return "e"+s  
-	
-			elseif q=="west" then return "W"+s
-			
-			//elseif q=="inDir" then return "i"+s
-				
-			elseif q=="To" then return "U"+s // cambié t por U
 			
 		
 				
