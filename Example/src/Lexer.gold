@@ -34,15 +34,16 @@ function createTransducer():ITransducer begin
 	
 	Q:= {"Init","R", "RO", "ROB" ,"ROBO", "ROBOT", "ROBOT_", "ROBOT_R" ,"V", "VA", "VAR", "VARS","B", "BE", "BEG", "BEGI","BEGIN", "E", "EN", "END",
 	"a", "as","ass", "assi","assig", "assign", "t", "to","m","mo","mov","move", "t","tu", "tur","turn","f","fa","fac","face","p","pu", "put","o","of",
-	"p","pi","pic","pick","T","To","ToT","ToTh","ToThe","i","in","inD","inDi","inDir", "r","ri","rig", "righ", "right", "l", "le", "lef", "left", "b",
+	"p","pi","pic","pick","t","to","toT","toTh","toThe","i","in","inD","inDi","inDir", "r","ri","rig", "righ", "right", "l", "le", "lef", "left", "b",
 	"ba", "bac", "back", "f", "fr", "fro", "fron", "front", "Num","Nombre", "i", "if", "t", "th", "the", "then", "e", "el", "els", "else", "w","wh","whi",
 	"whil", "while", "d", "do", "r", "re", "rep", "repe", "repea", "repeat", "t", "ti", "tim", "time", "times", "f", "fa", "fac", "faci","facin", "facing",
-	"c","ca","can","canP","canPu","canPut", "o","of","c","ca","can","canM","canMo", "canMov", "canMove","n", "no", "not", "C", "Ch", "Chi", "Chip", "Chips", "B","Ba","Bal",
-	"Ball", "Ballo", "Ballon", "Ballons", "n", "no", "nor", "nort", "north", "s", "so", "sou", "sout", "south", "w", "we", "wes", "west","e", "ea", "eas", "east",
-	"ERROR",
-	"assign:","move:","inDir:","ToThe:","turn:","face:","put:","pick:","if:","then:","else:","while:","do:","repeat:","times:","facing:","canPut:","of:","canMove:","not:","to:" } 
+	"c","ca","can","canP","canPu","canPut", "o","of","c","ca","can","canM","canMo", "canMov", "canMove","n", "no", "not", "C", "Ch", "Chi", "Chip", "Chips",
+	"B","Ba","Bal","Ball", "Ballo", "Ballon", "Ballons", "n", "no", "nor", "nort", "north", "s", "so", "sou", "sout", "south", "w", "we", "wes", "west","e",
+	"ea", "eas", "east","ERROR","assign:","move:","inDir:","toThe:","turn:","face:","put:","pick:","if:","then:","else:","while:","do:","repeat:","times:",
+	"facing:","canPut:","of:","canMove:","not:","to:" } 
 	
-	Σ:=('0'‥'9') ∪ ('a' ‥ 'z') ∪ ('A' ‥ 'Z') ∪ {'(',')',' ', '_' , ':'} 
+	
+	Σ:=('0'‥'9') ∪ ('a' ‥ 'z') ∪ ('A' ‥ 'Z') ∪ {'(',')',' ', '_' , ':' , ','} 
 	Out:={'R','V','B','a','m','D','T','x','C','O','z','s','e','W','U','t','f','p','E','n','F','R','L','r','k','N','i','h','l','w','d','r','I', 'g','u','o','c','v', 'P','K','$'}
 	q₀:="Init"
 	F:= {"Init"}∪{"END"}∪{"ERROR"}
@@ -134,12 +135,12 @@ function δ(q,σ) begin
 	elseif q="pick" and σ=':'  then return "pick:"
 	//elseif q="pick" then return "Init"
 			
-	elseif q="Init" and σ='T'  then return "T"
-	elseif q="T" and σ='o'  then return "To"
-	elseif q="To" and σ='T'  then return "ToT"
-	elseif q="ToT" and σ='h'  then return "ToTh"
-	elseif q="ToTh" and σ='e'  then return "ToThe"
-	elseif q="ToThe" and σ=':'  then return "ToThe:"
+	elseif q="Init" and σ='t'  then return "t"
+	elseif q="t" and σ='o'  then return "to"
+	elseif q="to" and σ='T'  then return "toT"
+	elseif q="toT" and σ='h'  then return "toTh"
+	elseif q="toTh" and σ='e'  then return "toThe"
+	elseif q="toThe" and σ=':'  then return "toThe:"
 	//elseif q="ToThe" then return "Init"
 		
 	elseif q="Init" and σ='i'  then return "i"
@@ -308,14 +309,27 @@ function δ(q,σ) begin
 	elseif q="Nombre" and σ ∈ ('a' ‥ 'z') then return "Nombre"
 	//elseif q="Nombre" then return "Init"
 	
+	/* 
 	elseif (q="Nombre" or q="Num" or q="east" or q="west" or q="south" or 
-			q="north" or q="Ballons" or q="Chips" or q="not" or q="canMove:" or
-			q="canPut:" or q="facing" or q="times:" or q="repeat:" or q="do:" or
-			q="while:" or q="else:" or q="then:" or q="if:" or q="front" or q="back" or
-			q= "left" or q="right" or q="inDir" or q="ToThe:" or q="pick:" or q="of:" or 
-			q="put:" or q="face:" or  q="turn:" or q= "move:" or q="to:" or q="assign:" or
-			q="END" or q="BEGIN" or q="VARS" or q="ROBOT_R") and σ ∈ {'\n','\t',' '}
-			then return "Init"
+		q="north" or q="Ballons" or q="Chips" or q="not" or q="canMove" or
+		q="canPut" or q="facing" or q="times" or q="repeat" or q="do" or
+		q="while" or q="else" or q="then" or q="if" or q="front" or q="back" or
+		q= "left" or q="right" or q="inDir" or q="ToThe" or q="pick" or q="of" or 
+		q="put" or q="face" or  q="turn" or q= "move" or q="to" or q="assign" or
+		q="END" or q="BEGIN" or q="VARS" or q="ROBOT_R") and σ in {'R','V','B','E','a','t','m','t','f','p','o','p','T','i','r','l','b'
+			,'f','i','t','e','w','d','r','t','f','c','o','c','n','C','B','n','s','w','e'}
+		then return σ+""
+		
+		*/
+			
+	elseif (q="Nombre" or q="Num" or q="east" or q="west" or q="south" or 
+		q="north" or q="Ballons" or q="Chips" or q="not" or q="canMove:" or
+		q="canPut:" or q="facing" or q="times:" or q="repeat:" or q="do:" or
+		q="while:" or q="else:" or q="then:" or q="if:" or q="front" or q="back" or
+		q= "left" or q="right" or q="inDir" or q="toThe:" or q="pick:" or q="of:" or 
+		q="put:" or q="face:" or  q="turn:" or q= "move:" or q="to:" or q="assign:" or
+		q="END" or q="BEGIN" or q="VARS" or q="ROBOT_R") and σ ∈ {'\n','\t',' '}
+		then return "Init"
 	
 	else return "ERROR"
 		
@@ -339,7 +353,9 @@ function h(q,σ) begin
 			
 		elseif σ∈{' ',',','\n','\t',';',':', ' '} then
 			if σ∉{' ','\n','\t'} then s:=String.valueOf(σ) end
-				
+			
+			if σ==',' then s:= λ end
+			
 			if q=="Init" then return s
 				
 			elseif q=="ROBOT_R" then return "R"
@@ -387,7 +403,7 @@ function h(q,σ) begin
 				
 			elseif q=="InDir:" then return "D"+s //cambié M por D !!!!!!!
 			
-			elseif q=="ToThe:" then return "T"+s  
+			elseif q=="toThe:" then return "T"+s  
 			
 			elseif q=="turn:" then return "t"+s
 				
@@ -435,3 +451,4 @@ function h(q,σ) begin
 			
 		end
 end
+
