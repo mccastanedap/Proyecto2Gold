@@ -368,17 +368,15 @@ function h(q,σ) begin
 				
 			elseif q=="Num" then return "n"+s 
 				
-			elseif q=="front" then return "F"+s  //cambié f por F
+			elseif q=="front" then return "F"+s  
 				
-			elseif q=="right" then return "R"+s  //cambié r por R
+			elseif q=="right" then return "R"+s 
 				
-			elseif q=="left" then return "L"+s  // cambié l por L
+			elseif q=="left" then return "L"+s 
 				
-			elseif q=="around" then return "r"+s // cambié a por r 
+			elseif q=="around" then return "r"+s 
 				
-			elseif q=="back" then return "K"+s  // cambié b por K
-	
-			//elseif q=="Skip" then return "K"+s
+			elseif q=="back" then return "K"+s  
 				
 			elseif q=="Nombre" then return "N"+s
 					
@@ -386,7 +384,7 @@ function h(q,σ) begin
 				
 			elseif q=="Balloons" then return "O"+s
 			
-			elseif q=="north" then return "z"+s // cambié n por z
+			elseif q=="north" then return "z"+s 
 				
 			elseif q=="south" then return "s"+s
 				
@@ -394,20 +392,18 @@ function h(q,σ) begin
 	
 			elseif q=="west" then return "W"+s
 			
-			//elseif q=="inDir" then return "i"+s
-			
 			//-------------------------->
 			elseif q=="assign:" then return "a"+s
 					
 			elseif q=="move:" then return "m"+s
 				
-			elseif q=="InDir:" then return "D"+s //cambié M por D !!!!!!!
+			elseif q=="InDir:" then return "D"+s 
 			
 			elseif q=="toThe:" then return "T"+s  
 			
 			elseif q=="turn:" then return "t"+s
 				
-			elseif q=="face:" then return "f"+s  //cambié F por f
+			elseif q=="face:" then return "f"+s  
 				
 			elseif q=="put:" then return "P"+s
 				
@@ -417,27 +413,27 @@ function h(q,σ) begin
 				
 			elseif q=="then:" then return "h"+s
 				
-			elseif q=="else:" then return "l"+s  // cambié e por l (no estoy muy seguro de este‥.)
+			elseif q=="else:" then return "l"+s  
 	
 			elseif q=="while:" then return "w"+s
 				
 			elseif q=="do:" then return "d"+s
 			
-			elseif q=="repeat:" then return "r"+s // cambié r por q
+			elseif q=="repeat:" then return "r"+s 
 				
 			elseif q=="times:" then return "I"+s
 				
-			elseif q=="facing:" then return "g"+s // cambié f por g
+			elseif q=="facing:" then return "g"+s 
 	
-			elseif q=="canPut:" then return "u"+s  // cambié c por u
+			elseif q=="canPut:" then return "u"+s  
 				
 			elseif q=="of:" then return "o"+s
 				
-			elseif q=="canMove:" then return "c"+s // cambié c por k
+			elseif q=="canMove:" then return "c"+s 
 				
-			elseif q=="not:" then return "x"+s // cambié n por x
+			elseif q=="not:" then return "x"+s 
 				
-			elseif q=="to:" then return "U"+s // cambié t por U	
+			elseif q=="to:" then return "U"+s 	
 	
 			
 			//-------------------------->
@@ -451,4 +447,4 @@ function h(q,σ) begin
 			
 		end
 end
-
+end
