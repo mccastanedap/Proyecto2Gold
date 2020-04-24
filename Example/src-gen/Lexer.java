@@ -207,7 +207,7 @@ public final class Lexer {
                                       }
                                       else {
                                         $line=77;
-                                        if (($opEqualY(q,"BEGIN")&&$opEqualY(\u03C3,'N'))) {
+                                        if (($opEqualY(q,"BEGI")&&$opEqualY(\u03C3,'N'))) {
                                           $line=77;
                                           $result="BEGIN";
                                           if (true) break $try;

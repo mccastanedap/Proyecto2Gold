@@ -74,7 +74,7 @@ function δ(q,σ) begin
 	elseif q="B" and σ='E'  then return "BE"
 	elseif q="BE" and σ='G'  then return "BEG"		
 	elseif q="BEG" and σ='I'  then return "BEGI"			
-	elseif q="BEGIN" and σ='N'  then return "BEGIN"		
+	elseif q="BEGI" and σ='N'  then return "BEGIN"		
 	//elseif q="BEGIN" then return "Init"
 		
 	elseif q="Init" and σ='E'  then return "E"
