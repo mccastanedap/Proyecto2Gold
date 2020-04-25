@@ -10,16 +10,28 @@ end
 
 procedure testLexer(M:ITransducer) begin
 	var sc:java.util.Scanner(System.$in)
+	
 	while true do
 		print "----------------------------"
 		print "Enter an input string: "
-		string:=sc.nextLine()+" "   //We add a space (which is also a separator to the end of the string)
+		string:=""
+		cond:=true
+		while cond==true do
+			a:= sc.nextLine().toString()
+			if(a!="") then 
+				string:=string+a+" "   //We add a space (which is also a separator to the end of the string)
+			else
+				cond=false
+				print string
+			end
+			
+		end
 		result:=M.acceptsString(string)    
-		tokenStream := M.getOutputString()
-		print "The lexer did "+(result?"":"not ")+" accept the string."
-		if result then print "Token Stream: "+ tokenStream end		
+			tokenStream := M.getOutputString()
+			print "The lexer did "+(result?"":"not ")+" accept the string."
+			if result then print "Token Stream: "+ tokenStream end		
 	end
-end 
+end
 
  
 
