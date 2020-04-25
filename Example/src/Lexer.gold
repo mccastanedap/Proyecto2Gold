@@ -343,7 +343,8 @@ function δ(q,σ) begin
 		q="END" or q="BEGIN" or q="VARS" or q="ROBOT_R") and σ ∈ {'\n','\t',' '}
 		then return "Init"
 	
-	else return "ERROR"
+	elseif q = "Init" and σ ∉ {('0'‥'9') ∪ ('a' ‥ 'z') ∪ ('A' ‥ 'Z') ∪ {'(',')',' ', '_' , ':' , ','}} then return "ERROR"
+	else return "Nombre"
 		
 	end
 	
@@ -451,7 +452,7 @@ function h(q,σ) begin
 			//-------------------------->
 				
 			//elseif q=="do" then return "d"+s
-			else return "v"+s
+			else return "N"+s
 				
 			end
 			
